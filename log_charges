@@ -1,0 +1,1830 @@
+output_charges
+nbMethod :  2
+OpenCL
+Initial Energy
+1167.292465814633 kJ/mol
+-60004.19307066547 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18587.3359375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 21229.20703125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 4516.86669921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -570.7698974609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -50683.69307066547 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> -0.0033398133236914873 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -53083.1875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Equilibrating...
+Equilibrated Energy
+1167.292465814633 kJ/mol
+-60004.19307066547 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18587.3359375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 21229.20703125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 4516.86669921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -570.7698974609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -50683.69307066547 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> -0.0033398133236914873 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -53083.1875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Starting Production NPT Simulation...
+20.49812676386409
+
+1 2018-01-12 15:10:56.589562
+35719.925367186544 kJ/mol
+-88337.44307066547 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 10828.8173828125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 10742.98828125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 2888.693603515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -1135.773681640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65040.94307066547 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 9617.513671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -56238.6484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -168923.44241124927 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 1
+<class 'simtk.openmm.openmm.NonbondedForce'> -50821.38887440902 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 2
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3419892787785133 -0.7245338446249959
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 10828.8173828125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 10742.98828125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 2888.693603515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -1135.773681640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65112.766645466676 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 9617.513671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -56238.6484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+2 2018-01-12 15:10:57.887691
+39015.77588593913 kJ/mol
+-87422.64164546668 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 11695.71875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 13350.212890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3047.12548828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -1035.4007568359375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -68710.39164546668 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 12901.4990234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -58671.2890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50858.891645466676 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38177134548523234 -0.35869059532504205
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 11695.71875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 13350.212890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3047.12548828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -1035.4007568359375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -68711.59015755425 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 12901.4990234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -58671.2890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+3 2018-01-12 15:10:58.194017
+42559.25920852562 kJ/mol
+-87519.71515755425 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 12167.4736328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 12839.6396484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 2949.49853515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -1094.6719970703125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -68749.71515755425 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 13498.130859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -59130.0390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09015755425 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.382611510980051 -0.35595296350905714
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 12167.4736328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 12839.6396484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 2949.49853515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -1094.6719970703125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -68749.71530480473 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 13498.130859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -59130.0390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+4 2018-01-12 15:10:58.465670
+44847.25429178914 kJ/mol
+-87185.84030480473 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 13207.52734375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 13054.0859375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 2947.572021484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -996.4752197265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -67546.59030480473 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 12466.751953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -60318.8203125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09030480473 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38242247981636845 -0.35801998206956265
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 13207.52734375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 13054.0859375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 2947.572021484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -996.4752197265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -67546.59041630896 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 12466.751953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -60318.8203125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+5 2018-01-12 15:10:58.768009
+44742.73758357228 kJ/mol
+-84264.46541630896 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 13939.55859375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 14890.935546875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3185.7158203125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -911.4708251953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65999.34041630896 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 11287.650390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -60657.40234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041630896 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241821535653664 -0.35803611166627686
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 13939.55859375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 14890.935546875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3185.7158203125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -911.4708251953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65999.34041495365 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 11287.650390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -60657.40234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+6 2018-01-12 15:10:59.039696
+47092.38416324183 kJ/mol
+-84105.59041495365 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 14030.9375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 15278.8515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3293.85205078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -863.2927856445312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -66016.59041495365 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10961.5625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -60790.953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041495365 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241877689329024 -0.3580240344198202
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 14030.9375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 15278.8515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3293.85205078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -863.2927856445312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -66016.46541471523 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10961.5625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -60790.953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+7 2018-01-12 15:10:59.346865
+47811.91500140028 kJ/mol
+-82753.09041471523 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 14898.650390625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 16113.2353515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3424.52392578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -825.6489868164062 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65798.09041471523 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10662.474609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -61228.21875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041471523 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824185543756397 -0.3580241278867346
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 14898.650390625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 16113.2353515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3424.52392578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -825.6489868164062 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65798.09041500394 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10662.474609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -61228.21875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+8 2018-01-12 15:10:59.621276
+49227.82391618955 kJ/mol
+-82718.84041500394 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 14595.9189453125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 16766.875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3423.12353515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -816.67724609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65233.09041500394 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10387.990234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -61842.953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041500394 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241909678219893 -0.35802381701300573
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 14595.9189453125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 16766.875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3423.12353515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -816.67724609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65233.09041461884 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10387.990234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -61842.953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+9 2018-01-12 15:10:59.928353
+50420.39154209709 kJ/mol
+-82448.46541461884 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 15299.697265625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 16620.890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3415.1650390625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -788.1541137695312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64922.09041461884 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10299.578125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -62373.6484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041461884 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824184830590415 -0.35802420344603925
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 15299.697265625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 16620.890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3415.1650390625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -788.1541137695312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64922.090414919425 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10299.578125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -62373.6484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+10 2018-01-12 15:11:00.202610
+51778.15156858065 kJ/mol
+-82117.09041491942 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 15392.4716796875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 17351.765625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3461.75146484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -755.522216796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64813.840414919425 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10164.171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -62917.890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414919425 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38242473069607624 -0.3580240919507272
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 15392.4716796875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 17351.765625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3461.75146484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -755.522216796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64813.840415136656 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10164.171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -62917.890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+11 2018-01-12 15:11:00.583692
+51356.52544366167 kJ/mol
+-80436.59041513666 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 15871.37109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18232.11328125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3538.44384765625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -666.6885986328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65061.840415136656 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10344.31640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -62694.1015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415136656 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241872604432636 -0.3580239996031897
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 15871.37109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18232.11328125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3538.44384765625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -666.6885986328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65061.840415288694 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10344.31640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -62694.1015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+12 2018-01-12 15:11:00.890697
+52990.31514866487 kJ/mol
+-80610.2154152887 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 16227.08984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 17869.91796875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3541.06103515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -709.2950439453125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64824.340415288694 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10324.6416015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63039.15625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415288694 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241987029159963 -0.3580243137772884
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 16227.08984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 17869.91796875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3541.06103515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -709.2950439453125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64824.34041469684 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10324.6416015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63039.15625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+13 2018-01-12 15:11:01.166562
+52819.54534322396 kJ/mol
+-79671.96541469684 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 16777.1328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18613.6953125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3549.931396484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -678.0440673828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65027.34041469684 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10181.716796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63089.0078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041469684 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241897763378857 -0.3580241217938664
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 16777.1328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18613.6953125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3549.931396484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -678.0440673828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65027.340415137354 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10181.716796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63089.0078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+14 2018-01-12 15:11:01.474169
+53501.58026570111 kJ/mol
+-79417.59041513735 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 16838.93359375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18654.125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3630.288330078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -678.846923828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64905.215415137354 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10333.587890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63290.53125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415137354 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824183415063672 -0.35802423607398975
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 16838.93359375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18654.125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3630.288330078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -678.846923828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64905.215414947364 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10333.587890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63290.53125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+15 2018-01-12 15:11:01.783798
+53820.8044420908 kJ/mol
+-78836.34041494736 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17100.517578125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18929.14453125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3643.2529296875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -711.172119140625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64997.965414947364 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10414.65234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63214.7421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414947364 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824184348796137 -0.35802429200787117
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17100.517578125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 18929.14453125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3643.2529296875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -711.172119140625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64997.96541512734 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10414.65234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63214.7421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+16 2018-01-12 15:11:02.058960
+53972.14703870576 kJ/mol
+-78140.21541512734 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17178.939453125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19519.5234375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3693.25830078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -625.1590576171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64903.84041512734 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10573.025390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63575.796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041512734 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824187582565885 -0.35802372747042016
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17178.939453125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19519.5234375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3693.25830078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -625.1590576171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64903.840414675884 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10573.025390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63575.796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+17 2018-01-12 15:11:02.367752
+55075.76501474308 kJ/mol
+-78865.59041467588 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17219.32421875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19113.48046875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3686.2421875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -764.3493041992188 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65273.590414675884 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10744.7041015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63591.6328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414675884 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241890900072417 -0.35802431231784526
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17219.32421875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19113.48046875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3686.2421875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -764.3493041992188 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65273.590414732695 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10744.7041015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63591.6328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+18 2018-01-12 15:11:02.646386
+54567.22005505924 kJ/mol
+-78150.9654147327 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17337.4921875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19813.048828125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3689.510986328125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -728.887451171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65033.215414732695 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10491.5166015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63720.328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414732695 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241888220889186 -0.35802412036519826
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17337.4921875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19813.048828125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3689.510986328125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -728.887451171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65033.21541551757 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10491.5166015625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63720.328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+19 2018-01-12 15:11:02.954935
+54623.08838966815 kJ/mol
+-77574.09041551757 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17455.53515625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19770.833984375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3702.622802734375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -607.264404296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65242.59041551757 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10726.4296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63379.71875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041551757 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241865682583104 -0.3580239822506192
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17455.53515625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19770.833984375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3702.622802734375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -607.264404296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65242.59041473339 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10726.4296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63379.71875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+20 2018-01-12 15:11:03.231139
+55353.37663350382 kJ/mol
+-77741.0904147334 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17659.9375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19651.11328125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3638.72265625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -683.2005004882812 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65032.34041473339 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10656.841796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63632.0703125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041473339 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241838029582764 -0.35802422653619975
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17659.9375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19651.11328125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3638.72265625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -683.2005004882812 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65032.34041458694 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10656.841796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63632.0703125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+21 2018-01-12 15:11:03.610218
+55360.24211803486 kJ/mol
+-77217.34041458694 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17775.76171875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19959.74609375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3737.743896484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -587.680419921875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65203.09041458694 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10602.1875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63501.92578125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041458694 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824191829516374 -0.35802381490044566
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17775.76171875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19959.74609375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3737.743896484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -587.680419921875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65203.09041512618 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10602.1875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63501.92578125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+22 2018-01-12 15:11:03.922251
+56167.64208172576 kJ/mol
+-77841.34041512618 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17656.3984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19601.40625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3691.6728515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -653.630859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64832.59041512618 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10353.697265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63658.35546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041512618 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824184946383635 -0.3580243507336151
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17656.3984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19601.40625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3691.6728515625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -653.630859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64832.590414755745 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10353.697265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63658.35546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+23 2018-01-12 15:11:04.201811
+56038.74353617919 kJ/mol
+-77256.84041475574 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18045.09375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19800.154296875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3656.210205078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -599.2425537109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64802.465414755745 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10393.64453125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63750.19140625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414755745 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38242987327160444 -0.3580239306016517
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18045.09375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 19800.154296875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3656.210205078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -599.2425537109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64802.46541495831 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10393.64453125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63750.19140625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+24 2018-01-12 15:11:04.511443
+55933.57772043324 kJ/mol
+-76989.96541495831 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17937.27734375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20224.658203125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3596.756591796875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -587.9208984375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65039.59041495831 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10476.36328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63597.40625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041495831 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241867021504655 -0.3580241807987313
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17937.27734375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20224.658203125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3596.756591796875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -587.9208984375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65039.59041498415 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10476.36328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63597.40625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+25 2018-01-12 15:11:04.821038
+56205.28625645279 kJ/mol
+-76848.71541498415 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17983.00390625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20237.220703125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3683.4677734375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -548.087646484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64905.46541498415 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10505.12890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63804.01953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041498415 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824208320493457 -0.3580236578365041
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17983.00390625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20237.220703125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3683.4677734375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -548.087646484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64905.46541494946 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10505.12890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63804.01953125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+26 2018-01-12 15:11:05.099835
+55819.132990272716 kJ/mol
+-76234.09041494946 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18121.6328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20448.85546875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3726.257568359375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -498.66156005859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65033.09041494946 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10586.4423828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63585.53515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041494946 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.382418765638391 -0.35802446662597903
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18121.6328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20448.85546875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3726.257568359375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -498.66156005859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65033.09041485214 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10586.4423828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63585.53515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+27 2018-01-12 15:11:05.410814
+55775.97395391643 kJ/mol
+-76061.71541485214 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18313.556640625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20551.318359375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3760.56298828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -537.8972778320312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64819.09041485214 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10565.248046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63895.42578125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041485214 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824199935803433 -0.3580239681858918
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18313.556640625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20551.318359375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3760.56298828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -537.8972778320312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64819.09041497414 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10565.248046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63895.42578125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+28 2018-01-12 15:11:05.687302
+56354.64827398653 kJ/mol
+-76243.71541497414 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18123.1484375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20612.13671875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3710.547119140625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -555.83740234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65050.09041497414 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10609.556640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63693.1328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041497414 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241863374732443 -0.35802407143686044
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18123.1484375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20612.13671875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3710.547119140625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -555.83740234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65050.09041482676 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10609.556640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63693.1328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+29 2018-01-12 15:11:05.997196
+56739.85108471707 kJ/mol
+-76693.34041482676 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17864.8671875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20493.01171875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3697.40673828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -543.362548828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64977.59041482676 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10684.05078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63911.7890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041482676 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241917290136396 -0.358024371464974
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 17864.8671875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20493.01171875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3697.40673828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -543.362548828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64977.59041492874 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10684.05078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63911.7890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+30 2018-01-12 15:11:06.275784
+56689.14431676234 kJ/mol
+-76609.34041492874 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18209.80078125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20104.890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3689.385498046875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -620.6918334960938 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64621.09041492874 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10576.6005859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63948.359375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041492874 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824187036210513 -0.3580242028873164
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18209.80078125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20104.890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3689.385498046875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -620.6918334960938 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64621.09041511617 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10576.6005859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63948.359375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+31 2018-01-12 15:11:06.657027
+56537.033021191484 kJ/mol
+-76478.84041511617 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18015.869140625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20309.46484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3727.669921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -574.0914306640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64775.34041511617 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10609.0107421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63791.47265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041511617 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824194608698907 -0.358023475461753
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18015.869140625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20309.46484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3727.669921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -574.0914306640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64775.34041448566 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10609.0107421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63791.47265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+32 2018-01-12 15:11:06.968559
+56657.17100816872 kJ/mol
+-76441.09041448566 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18200.44140625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20345.56640625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3692.15283203125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -590.99658203125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64880.59041448566 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10677.5224609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63885.0859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041448566 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241892152292883 -0.35802427010682386
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18200.44140625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20345.56640625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3692.15283203125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -590.99658203125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64880.59041507868 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10677.5224609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63885.0859375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+33 2018-01-12 15:11:07.246291
+56924.47056885064 kJ/mol
+-76396.21541507868 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18338.37109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20350.455078125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3633.602294921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -632.479248046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64901.59041507868 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10597.0615234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63781.5625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041507868 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241949472614745 -0.35802410400094203
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18338.37109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20350.455078125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3633.602294921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -632.479248046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64901.59041502117 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10597.0615234375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63781.5625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+34 2018-01-12 15:11:07.557694
+56923.93284767703 kJ/mol
+-76142.34041502117 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18345.0234375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20447.37890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3730.5693359375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -586.375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65159.09041502117 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10885.87109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63805.69921875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041502117 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241912475099266 -0.35802412616560536
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18345.0234375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20447.37890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3730.5693359375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -586.375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65159.09041521512 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10885.87109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63805.69921875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+35 2018-01-12 15:11:07.867794
+57143.291558230296 kJ/mol
+-76120.09041521512 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18466.0546875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20362.89453125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3634.544921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -567.4550170898438 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64801.71541521512 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10750.3857421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63964.73046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041521512 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38242030837276325 -0.3580245137266171
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18466.0546875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20362.89453125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3634.544921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -567.4550170898438 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64801.71541523957 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10750.3857421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63964.73046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+36 2018-01-12 15:11:08.145093
+56828.43288855057 kJ/mol
+-75900.71541523957 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18727.734375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20427.884765625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3628.321044921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -550.2387084960938 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64907.34041523957 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10647.6640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63874.671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041523957 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824186286207197 -0.358024305394761
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18727.734375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20427.884765625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3628.321044921875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -550.2387084960938 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64907.34041452338 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10647.6640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63874.671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+37 2018-01-12 15:11:08.456618
+57047.911437609524 kJ/mol
+-76182.59041452338 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18134.08984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20353.853515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3683.7685546875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -560.4034423828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64672.46541452338 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10702.9833984375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63824.5078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041452338 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824203581872644 -0.3580242112464603
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18134.08984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20353.853515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3683.7685546875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -560.4034423828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64672.465415260056 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10702.9833984375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63824.5078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+38 2018-01-12 15:11:08.733494
+57460.66802471643 kJ/mol
+-76242.34041526006 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18434.80078125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20319.37890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3652.39892578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -494.1893615722656 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64941.590415260056 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10826.1796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64039.25 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415260056 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824187196589472 -0.35802435925321247
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18434.80078125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20319.37890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3652.39892578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -494.1893615722656 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64941.590414996026 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10826.1796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64039.25 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+39 2018-01-12 15:11:09.043176
+57243.14291100777 kJ/mol
+-75896.34041499603 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18692.62890625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20383.3203125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3633.00439453125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -498.2877197265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64994.590414996026 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10752.341796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63864.6875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414996026 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38242363121359935 -0.3580235516845392
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18692.62890625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20383.3203125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3633.00439453125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -498.2877197265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64994.71541451942 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10752.341796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63864.6875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+40 2018-01-12 15:11:09.354333
+57265.86676079105 kJ/mol
+-76072.09041451942 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18389.525390625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20505.15625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3758.25830078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -432.0474548339844 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64716.46541451942 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10470.919921875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64047.3828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041451942 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241839410404704 -0.3580241919582486
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18389.525390625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20505.15625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3758.25830078125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -432.0474548339844 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64716.46541488287 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10470.919921875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64047.3828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+41 2018-01-12 15:11:09.701696
+57119.55300918128 kJ/mol
+-75935.34041488287 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18257.248046875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20837.65625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3690.30126953125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -500.26654052734375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64890.59041488287 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10518.99609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63848.7109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041488287 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38242500425780246 -0.35802393399965465
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18257.248046875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20837.65625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3690.30126953125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -500.26654052734375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64890.590414713835 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10518.99609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63848.7109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+42 2018-01-12 15:11:10.014031
+57423.468847292475 kJ/mol
+-75999.84041471384 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18723.91015625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20273.6484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3632.88671875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -584.438232421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64753.215414713835 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10618.5556640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63911.03515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414713835 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241899396735934 -0.35802423484212814
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18723.91015625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20273.6484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3632.88671875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -584.438232421875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64753.215414943406 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10618.5556640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63911.03515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+43 2018-01-12 15:11:10.324379
+57314.701615702186 kJ/mol
+-75882.4654149434 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18376.26171875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20702.494140625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3655.96484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -453.045654296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64894.090414943406 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10871.587890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64141.65625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414943406 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824187245434543 -0.35802343728979824
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18376.26171875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20702.494140625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3655.96484375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -453.045654296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64894.09041461279 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10871.587890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64141.65625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+44 2018-01-12 15:11:10.606380
+57011.98002289701 kJ/mol
+-75414.09041461279 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18725.333984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20770.3359375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3651.31298828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -583.00390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64743.34041461279 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10743.423828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63978.2109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041461279 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824192815622952 -0.3580241885241315
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18725.333984375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20770.3359375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3651.31298828125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -583.00390625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64743.340415051905 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10743.423828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63978.2109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+45 2018-01-12 15:11:10.918513
+56805.55158321012 kJ/mol
+-75476.9654150519 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18690.6640625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20918.0859375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3624.2841796875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -542.5740966796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64874.090415051905 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10774.63671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64068.0 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415051905 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824184264184102 -0.3580241826379808
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18690.6640625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20918.0859375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3624.2841796875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -542.5740966796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64874.090414833045 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10774.63671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64068.0 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+46 2018-01-12 15:11:11.196003
+57195.97070821165 kJ/mol
+-75787.34041483304 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18423.060546875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20806.875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3675.0546875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -554.4354858398438 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65318.090414833045 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10908.05078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63727.78515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090414833045 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824184153824643 -0.35802455837961916
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18423.060546875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20806.875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3675.0546875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -554.4354858398438 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65318.09041491849 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10908.05078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63727.78515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+47 2018-01-12 15:11:11.509921
+57086.13539062929 kJ/mol
+-75758.3404149185 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18812.455078125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20781.673828125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3688.34912109375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -587.0384521484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64980.09041491849 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10669.109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64142.74609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041491849 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824189430457806 -0.3580241936530985
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18812.455078125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20781.673828125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3688.34912109375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -587.0384521484375 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64980.09041521838 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10669.109375 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64142.74609375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+48 2018-01-12 15:11:11.791816
+57347.668220000225 kJ/mol
+-75964.09041521838 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18720.57421875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20562.71484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3670.181640625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -555.2610473632812 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65159.34041521838 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10743.279296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63946.29296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041521838 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241860429040997 -0.3580240118379247
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18720.57421875 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20562.71484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3670.181640625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -555.2610473632812 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65159.34041474038 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10743.279296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63946.29296875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+49 2018-01-12 15:11:12.104868
+57098.673485921114 kJ/mol
+-75525.59041474038 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18644.283203125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20806.2890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3799.24755859375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -569.8024291992188 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65462.84041474038 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10844.1103515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63586.8984375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041474038 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824189607810515 -0.358023859973552
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18644.283203125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20806.2890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3799.24755859375 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -569.8024291992188 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65462.84041479486 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10844.1103515625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63586.8984375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+50 2018-01-12 15:11:12.383103
+56801.72468261607 kJ/mol
+-74779.84041479486 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 19183.9609375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 21013.515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3767.996337890625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -605.4293823242188 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65162.84041479486 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10836.5185546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63813.640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041479486 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824186201747432 -0.3580245288398003
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 19183.9609375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 21013.515625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3767.996337890625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -605.4293823242188 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65162.84041523421 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10836.5185546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63813.640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+51 2018-01-12 15:11:12.763165
+57580.83594212541 kJ/mol
+-75645.96541523421 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18727.236328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20737.818359375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3688.16357421875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -568.6091918945312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65096.59041523421 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10737.869140625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63871.828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041523421 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824213773616138 -0.35802408554540205
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18727.236328125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20737.818359375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3688.16357421875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -568.6091918945312 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65096.590415237006 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10737.869140625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63871.828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+52 2018-01-12 15:11:13.079023
+57793.582696139056 kJ/mol
+-75785.465415237 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18632.109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20933.904296875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3670.31494140625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -527.5523681640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65354.215415237006 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10869.7548828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64009.8203125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415237006 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824187948327801 -0.3580237155313642
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18632.109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20933.904296875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3670.31494140625 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -527.5523681640625 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65354.21541476878 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10869.7548828125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64009.8203125 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+53 2018-01-12 15:11:13.361056
+58087.7264770609 kJ/mol
+-75919.71541476878 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18468.259765625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20845.37890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3669.655517578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -491.6942138671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65065.84041476878 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10859.11328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64204.65625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041476878 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38242029308524095 -0.3580239711648361
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18468.259765625 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20845.37890625 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3669.655517578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -491.6942138671875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65065.840415099636 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10859.11328125 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64204.65625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+54 2018-01-12 15:11:13.675851
+57124.64472188009 kJ/mol
+-75105.71541509964 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18902.12109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20948.1484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3695.665283203125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -508.06463623046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64747.090415099636 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10715.1572265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64111.6171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415099636 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.38241890692167163 -0.3580242189175553
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18902.12109375 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20948.1484375 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3695.665283203125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -508.06463623046875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -64747.09041470662 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10715.1572265625 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -64111.6171875 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+55 2018-01-12 15:11:13.954505
+57444.85977859181 kJ/mol
+-75442.21541470662 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18699.578125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20915.919921875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3747.64013671875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -510.80810546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65432.59041470662 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10872.966796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63734.7890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.09041470662 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824190396139529 -0.35802407285094123
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18699.578125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20915.919921875 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3747.64013671875 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -510.80810546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65432.590415251674 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10872.966796875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63734.7890625 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+56 2018-01-12 15:11:14.270517
+57233.62802715431 kJ/mol
+-75141.59041525167 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18729.595703125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20994.251953125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3811.80517578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -469.5303955078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65344.465415251674 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10902.5185546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63765.84375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+charge iteration 0
+<class 'simtk.openmm.openmm.NonbondedForce'> -50860.090415251674 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+Steps to converge: 1
+Final charges on graphene atoms
+total charge on graphene (cathode,anode): 0.3824180682959661 -0.35802437745670146
+Charges converged, Energies from full Force Field
+<class 'simtk.openmm.openmm.HarmonicBondForce'> 18729.595703125 kJ/mol
+<class 'simtk.openmm.openmm.HarmonicAngleForce'> 20994.251953125 kJ/mol
+<class 'simtk.openmm.openmm.PeriodicTorsionForce'> 3811.80517578125 kJ/mol
+<class 'simtk.openmm.openmm.RBTorsionForce'> -469.5303955078125 kJ/mol
+<class 'simtk.openmm.openmm.CustomTorsionForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.NonbondedForce'> -65344.46541489195 kJ/mol
+<class 'simtk.openmm.openmm.DrudeForce'> 10902.5185546875 kJ/mol
+<class 'simtk.openmm.openmm.CustomNonbondedForce'> -63765.84375 kJ/mol
+<class 'simtk.openmm.openmm.CustomBondForce'> 0.0 kJ/mol
+<class 'simtk.openmm.openmm.CMMotionRemover'> 0.0 kJ/mol
+
+57 2018-01-12 15:11:14.584297

@@ -1,0 +1,31 @@
+set mol 0
+set n [molinfo $mol get numframes]
+
+set fp [open "charges.py.dat" r]
+for {set i 0} {$i < $n} {incr i} {
+    set chrg($i) [gets $fp]
+}
+close $fp
+
+proc change_charge {args} {
+    global chrg mol
+    set a 1600
+    set f [molinfo $mol get frame]
+    for {set i 0} {$i < $a} {incr i} {
+        set s [atomselect $mol "index $i"]
+        $s set charge [lindex $chrg($f) $i]
+    }
+}
+
+# update each frame
+trace variable vmd_frame($mol) w change_charge
+mol colupdate   0 $mol on
+
+mol scaleminmax 0 $mol 0 1
+color scale method BWR
+color scale midpoint 0.5
+color scale min 0.0
+color scale max 1.0
+
+animate goto start
+change_charge
