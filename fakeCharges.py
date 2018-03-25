@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+"""
+
+Testing script for charge visualization in VMD
+
+"""
+
 from random import random
 
 def makeCharges():

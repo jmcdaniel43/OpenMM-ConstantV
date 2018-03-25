@@ -1,7 +1,7 @@
 set mol 0
 set n [molinfo $mol get numframes]
 
-set fp [open "charges.py.dat" r]
+set fp [open "charges.dat" r]
 for {set i 0} {$i < $n} {incr i} {
     set chrg($i) [gets $fp]
 }
@@ -21,11 +21,11 @@ proc change_charge {args} {
 trace variable vmd_frame($mol) w change_charge
 mol colupdate   0 $mol on
 
-mol scaleminmax 0 $mol 0 1
 color scale method BWR
-color scale midpoint 0.5
-color scale min 0.0
-color scale max 1.0
+# mol scaleminmax 0 $mol -0.01 0.01
+# color scale min 0
+# color scale midpoint 0.5
+# color scale max 1
 
 animate goto start
 change_charge

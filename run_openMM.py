@@ -32,18 +32,18 @@ integ_md.setMaxDrudeDistance(0.02)  # this should prevent polarization catastrop
 # this integrator won't be used, its just for Efield electric field calculation
 integ_junk = DrudeLangevinIntegrator(temperature, 1/picosecond, 1*kelvin, 1/picosecond, 0.001*picoseconds)
 
-pdb.topology.loadBondDefinitions(strdir+'sapt_residues.xml')
-pdb.topology.loadBondDefinitions(strdir+'graph_residue_c.xml')
-pdb.topology.loadBondDefinitions(strdir+'graph_residue_n.xml')
+pdb.topology.loadBondDefinitions(strdir+'ffdir/sapt_residues.xml')
+pdb.topology.loadBondDefinitions(strdir+'ffdir/graph_residue_c.xml')
+pdb.topology.loadBondDefinitions(strdir+'ffdir/graph_residue_n.xml')
 pdb.topology.createStandardBonds()
 
 modeller = Modeller(pdb.topology, pdb.positions)
-forcefield = ForceField(strdir+'sapt.xml',strdir+'graph_c.xml',strdir+'graph_n.xml')
+forcefield = ForceField(strdir+'ffdir/sapt.xml',strdir+'ffdir/graph_c.xml',strdir+'ffdir/graph_n.xml')
 modeller.addExtraParticles(forcefield)
 
 # this force field has only Coulomb interactions which is used to compute electric field
 modeller2 = Modeller(pdb.topology, pdb.positions)
-forcefield_Efield = ForceField(strdir+'sapt_Efield.xml',strdir+'graph_c.xml',strdir+'graph_n.xml')
+forcefield_Efield = ForceField(strdir+'ffdir/sapt_Efield.xml',strdir+'ffdir/graph_c.xml',strdir+'ffdir/graph_n.xml')
 modeller2.addExtraParticles(forcefield_Efield)
 
 system = forcefield.createSystem(modeller.topology, nonbondedCutoff=cutoff, constraints=None, rigidWater=True)
@@ -77,7 +77,7 @@ for i in range(system.getNumParticles()):
 
 #platform = Platform.getPlatformByName('CPU')
 platform = Platform.getPlatformByName('OpenCL')
-properties = {'OpenCLPrecision': 'mixed', 'OpenCLDeviceIndex': '0'}
+properties = {'OpenCLPrecision': 'mixed'}
 
 simmd = Simulation(modeller.topology, system, integ_md, platform)
 simmd.context.setPositions(modeller.positions)
