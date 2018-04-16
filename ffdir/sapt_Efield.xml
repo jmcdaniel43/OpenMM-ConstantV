@@ -298,12 +298,12 @@
   <Type name="dchl-DCT" class="Sh" mass="0.4"/>
   <Type name="dchl-HC" class="HC" element="H" mass="1.0080"/>
   <Type name="dchl-HC1" class="HC" element="H" mass="1.0080"/>
-  <Type name="dchl-Cl" class="Cl" element="C" mass="35.053"/>
+  <Type name="dchl-Cl" class="Cl" element="Cl" mass="35.053"/>
   <Type name="dchl-DCl" class="Sh" mass="0.4"/>
   <Type name="dchl-CT1" class="CT" element="C" mass="11.611"/>
   <Type name="dchl-DCT1" class="Sh" mass="0.4"/>
   <Type name="dchl-HC2" class="HC" element="H" mass="1.0080"/>
-  <Type name="dchl-Cl1" class="Cl" element="C" mass="35.053"/>
+  <Type name="dchl-Cl1" class="Cl" element="Cl" mass="35.053"/>
   <Type name="dchl-DCl1" class="Sh" mass="0.4"/>
   <Type name="dchl-HC3" class="HC" element="H" mass="1.0080"/>
  </AtomTypes>
