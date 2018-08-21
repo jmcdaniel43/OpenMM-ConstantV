@@ -10,223 +10,111 @@ from copy import deepcopy
 import os
 import sys
 import numpy
+import argparse
+import shutil
 
-if len(sys.argv) > 1:
-    outPath = 'output_' +  sys.argv[1]
+from subroutines import *
+
+
+
+parser = argparse.ArgumentParser()
+parser.add_argument("pdb", type=str, help="PDB file with initial positions")
+parser.add_argument("--nstep", type=str, help="number of step for updating forces")
+parser.add_argument("--volt", type=str, help="applied potential (V)")
+parser.add_argument("--nsec", type=str, help="simulation time (ns)")
+args = parser.parse_args()
+
+if args.nstep is not None:
+    outPath = 'output_' + args.nstep + "step_" + args.volt + "V_" + args.nsec + "ns"
 else:
     outPath = "output" + strftime("%s",gmtime())
 
-temperature=300*kelvin
-cutoff=1.4*nanometer
+if os.path.exists(outPath):
+    shutil.rmtree(outPath)
 
-strdir='../'
+strdir ='../'
 os.mkdir(outPath)
 os.chdir(outPath)
 chargesFile = open("charges.dat", "w")
 print(outPath)
 
-pdb = PDBFile(strdir+'equil_nvt_noDrudes.pdb')
+pdb = args.pdb
+sim = MDsimulation( 
+        pdb, 
+        ResidueConnectivityFiles = [
+                strdir + 'ffdir/sapt_residues.xml', 
+                strdir + 'ffdir/graph_residue_c.xml'
+        ],
+        FF_files = [
+                strdir + 'ffdir/sapt_noDB.xml', 
+                strdir + 'ffdir/graph_c_freeze.xml'
+        ], 
+        FF_Efield_files = [
+                strdir + 'ffdir/sapt_Efield_noDB.xml', 
+                strdir + 'ffdir/graph_c_freeze.xml'
+        ]
+)
 
-integ_md = DrudeLangevinIntegrator(temperature, 1/picosecond, 1*kelvin, 1/picosecond, 0.001*picoseconds)
-integ_md.setMaxDrudeDistance(0.02)  # this should prevent polarization catastrophe during equilibration, but shouldn't affect results afterwards ( 0.2 Angstrom displacement is very large for equil. Drudes)
-# this integrator won't be used, its just for Efield electric field calculation
-integ_junk = DrudeLangevinIntegrator(temperature, 1/picosecond, 1*kelvin, 1/picosecond, 0.001*picoseconds)
-
-pdb.topology.loadBondDefinitions(strdir+'ffdir/sapt_residues.xml')
-pdb.topology.loadBondDefinitions(strdir+'ffdir/graph_residue_c.xml')
-pdb.topology.loadBondDefinitions(strdir+'ffdir/graph_residue_n.xml')
-pdb.topology.createStandardBonds()
-
-modeller = Modeller(pdb.topology, pdb.positions)
-forcefield = ForceField(strdir+'ffdir/sapt.xml',strdir+'ffdir/graph_c.xml',strdir+'ffdir/graph_n.xml')
-modeller.addExtraParticles(forcefield)
-
-# this force field has only Coulomb interactions which is used to compute electric field
-modeller2 = Modeller(pdb.topology, pdb.positions)
-forcefield_Efield = ForceField(strdir+'ffdir/sapt_Efield.xml',strdir+'ffdir/graph_c.xml',strdir+'ffdir/graph_n.xml')
-modeller2.addExtraParticles(forcefield_Efield)
-
-system = forcefield.createSystem(modeller.topology, nonbondedCutoff=cutoff, constraints=None, rigidWater=True)
-nbondedForce = [f for f in [system.getForce(i) for i in range(system.getNumForces())] if type(f) == NonbondedForce][0]
-customNonbondedForce = [f for f in [system.getForce(i) for i in range(system.getNumForces())] if type(f) == CustomNonbondedForce][0]
-drudeForce = [f for f in [system.getForce(i) for i in range(system.getNumForces())] if type(f) == DrudeForce][0]
-nbondedForce.setNonbondedMethod(NonbondedForce.PME)
-customNonbondedForce.setNonbondedMethod(min(nbondedForce.getNonbondedMethod(),NonbondedForce.CutoffPeriodic))
-print('nbMethod : ', customNonbondedForce.getNonbondedMethod())
-
-for i in range(system.getNumForces()):
-    f = system.getForce(i)
-    type(f)
-    f.setForceGroup(i)
-    # Here we are adding periodic boundaries to intra-molecular interactions.  Note that DrudeForce does not have this attribute, and
-    # so if we want to use thole screening for graphite sheets we might have to implement periodic boundaries for this force type
-    if type(f) == HarmonicBondForce or type(f) == HarmonicAngleForce or type(f) == PeriodicTorsionForce or type(f) == RBTorsionForce:
-       f.setUsesPeriodicBoundaryConditions(True)
-    f.usesPeriodicBoundaryConditions()
-
-# set up system2 for Efield calculation
-system_Efield = forcefield_Efield.createSystem(modeller2.topology, nonbondedCutoff=cutoff, constraints=None, rigidWater=True)
-nbondedForce_Efield = [f for f in [system_Efield.getForce(i) for i in range(system_Efield.getNumForces())] if type(f) == NonbondedForce][0]
-nbondedForce_Efield.setNonbondedMethod(NonbondedForce.PME)
-
-
-totmass = 0.*dalton
-for i in range(system.getNumParticles()):
-    totmass += system.getParticleMass(i)
-
-
-#platform = Platform.getPlatformByName('CPU')
-platform = Platform.getPlatformByName('OpenCL')
-properties = {'OpenCLPrecision': 'mixed'}
-
-simmd = Simulation(modeller.topology, system, integ_md, platform)
-simmd.context.setPositions(modeller.positions)
-
-# set up simulation for Efield
-simEfield = Simulation(modeller2.topology, system_Efield, integ_junk, platform)
-
-platform = simmd.context.getPlatform()
-platformname = platform.getName();
-print(platformname)
-
-# Initialize energy
-state = simmd.context.getState(getEnergy=True,getForces=True,getVelocities=True,getPositions=True)
-print('Initial Energy')
-print(str(state.getKineticEnergy()))
-print(str(state.getPotentialEnergy()))
-for j in range(system.getNumForces()):
-    f = system.getForce(j)
-    print(type(f), str(simmd.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
-
-t1 = datetime.now()
-# write initial pdb with drude oscillators
-position = state.getPositions()
-simmd.topology.setPeriodicBoxVectors(state.getPeriodicBoxVectors())
-PDBFile.writeFile(simmd.topology, position, open('start_drudes.pdb', 'w'))
-
-simmd.reporters = []
-simmd.reporters.append(DCDReporter('md_nvt.dcd', 1000))
-simmd.reporters.append(CheckpointReporter('md_nvt.chk', 10000))
-simmd.reporters[1].report(simmd,state)
-
-# print('Equilibrating...')
-# for i in range(5000):
-#     simmd.step(1000)
-
-state = simmd.context.getState(getEnergy=True,getForces=True,getPositions=True,enforcePeriodicBox=True)
-position = state.getPositions()
-simmd.topology.setPeriodicBoxVectors(state.getPeriodicBoxVectors())
-# PDBFile.writeFile(simmd.topology, position, open(strdir+'equil_nvt.pdb', 'w'))
-
-state = simmd.context.getState(getPositions=True)
-initialPositions = state.getPositions()
-simmd.context.reinitialize()
-simmd.context.setPositions(initialPositions)
-
-state = simmd.context.getState(getEnergy=True,getForces=True,getVelocities=True,getPositions=True,getParameters=True)
-print('Equilibrated Energy')
-print(str(state.getKineticEnergy()))
-print(str(state.getPotentialEnergy()))
-for j in range(system.getNumForces()):
-    f = system.getForce(j)
-    print(type(f), str(simmd.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
+sim.equilibration()
 
 print('Starting Production NPT Simulation...')
 
 # interior sheets which have fluctuation charges are now labeled "grpc", and sheets which remain neutral are labeled
 # "grph"
-res_idx = -1
-c562_1 = -1
-c562_2 = -1
-cathode = []
-anode = []
-for res in simmd.topology.residues():
-    if res.name == "grpc":
-        for atom in res._atoms:
-            (q_i, sig, eps) = nbondedForce.getParticleParameters(atom.index)
-            if q_i._value != 0:
-                print(atom, q_i)
-        if res_idx == -1:
-            res_idx = res.index
-            for atom in res._atoms:
-                cathode.insert(int(atom.name[1:]), atom.index)
-                if atom.name == "C562":
-                    c562_1 = atom.index
-        elif res.index != res_idx:
-            for atom in res._atoms:
-                anode.insert(int(atom.name[1:]), atom.index)
-                if atom.name == "C562":
-                    c562_2 = atom.index
+grpc = Graph_list("grpc")
+grpc.grpclist(sim)
+grp_dummy = Graph_list("grpd")
+grp_dummy.grpclist(sim)
 
-graph = deepcopy(cathode)
-graph.extend(deepcopy(anode))
-assert len(graph) == 1600
+graph = deepcopy(grpc.cathode)
+graph.extend(deepcopy(grp_dummy.dummy[:int(len(grp_dummy.dummy)/2)]))
+graph.extend(deepcopy(grpc.anode))
+graph.extend(deepcopy(grp_dummy.dummy[int(len(grp_dummy.dummy)/2): len(grp_dummy.dummy)]))
+assert len(graph) == 2400
 
+# H atoms of solution
+HofBMI = solution_Hlist("BMIM")
+HofBMI.cation_hlist(sim)
+BofBF4 = solution_Hlist("BF4")
+BofBF4.anion_hlist(sim)
+HofACN = solution_Hlist("acnt")
+HofACN.solvent_hlist(sim)
+He = solution_Hlist("Hel")
+He.vac_list(sim)
 
-#******* JGM ****************
+merge_Hlist= deepcopy(HofBMI.cation)
+merge_Hlist.extend( deepcopy(BofBF4.anion) )
+merge_Hlist.extend( deepcopy(HofACN.solvent) )
+He_list = deepcopy(He.He)
+
+# all atoms of solution
+BMIM = solution_allatom("BMIM")
+BMIM.res_list(sim)
+BF4 = solution_allatom("BF4")
+BF4.res_list(sim)
+acnt = solution_allatom("acnt")
+acnt.res_list(sim)
+
+solvent_list = deepcopy(BMIM.atomlist)
+solvent_list.extend(deepcopy(BF4.atomlist))
+solvent_list.extend(deepcopy(acnt.atomlist))
+
 # add exclusions for intra-sheet non-bonded interactions.
-
-# first figure out which exclusions we already have (1-4 atoms and closer).  The code doesn't
-# allow the same exclusion to be added twice
-flagexclusions = {}
-for i in range(customNonbondedForce.getNumExclusions()):
-    (particle1, particle2) = customNonbondedForce.getExclusionParticles(i)
-    string1=str(particle1)+"_"+str(particle2)
-    string2=str(particle2)+"_"+str(particle1)
-    flagexclusions[string1]=1
-    flagexclusions[string2]=1
-
-# now add exclusions for every atom pair in each sheet if we don't already have them
-#cathode first.
-for i in range(len(cathode)):
-    indexi = cathode[i]
-    for j in range(i+1,len(cathode)):
-        indexj = cathode[j]
-        string1=str(indexi)+"_"+str(indexj)
-        string2=str(indexj)+"_"+str(indexi)
-        if string1 in flagexclusions and string2 in flagexclusions:
-            continue
-        else:
-            customNonbondedForce.addExclusion(indexi,indexj)
-            nbondedForce.addException(indexi,indexj,0,1,0,True)
-            nbondedForce_Efield.addException(indexi,indexj,0,1,0,True)
-#now anode
-for i in range(len(anode)):
-    indexi = anode[i]
-    for j in range(i+1,len(anode)):
-        indexj = anode[j]
-        string1=str(indexi)+"_"+str(indexj)
-        string2=str(indexj)+"_"+str(indexi)
-        if string1 in flagexclusions and string2 in flagexclusions:
-            continue
-        else:
-            customNonbondedForce.addExclusion(indexi,indexj)
-            nbondedForce.addException(indexi,indexj,0,1,0,True)
-            nbondedForce_Efield.addException(indexi,indexj,0,1,0,True)
-
-
+sim.exlusionNonbondedForce(graph)
+state = sim.simmd.context.getState(getEnergy=True,getForces=True,getVelocities=True,getPositions=True,getParameters=True)
 initialPositions = state.getPositions()
-
-pos_c562_1 = initialPositions[c562_1]
-pos_c562_2 = initialPositions[c562_2]
-cell_dist = 0
-for i in range(3):
-    d = pos_c562_1[i] / nanometer - pos_c562_2[i] / nanometer
-    cell_dist += (d**2)
-
-cell_dist = cell_dist**(1/2)
-
+cell_dist = Distance(grpc.c562_1, grpc.c562_2, initialPositions)
 print('cathode-anode distance (nm)', cell_dist)
 
-boxVecs = simmd.topology.getPeriodicBoxVectors()
+boxVecs = sim.simmd.topology.getPeriodicBoxVectors()
 crossBox = numpy.cross(boxVecs[0], boxVecs[1])
 sheet_area = numpy.dot(crossBox, crossBox)**0.5 / nanometer**2
 print(sheet_area)
 
-simmd.context.reinitialize()
-simEfield.context.reinitialize()
-simmd.context.setPositions(modeller.positions)
-simEfield.context.setPositions(modeller.positions)
+sim.simmd.context.reinitialize()
+sim.simEfield.context.reinitialize()
+sim.simmd.context.setPositions(initialPositions)
+sim.simEfield.context.setPositions(initialPositions)
 
 
 #************ get rid of the MD loop, just calculating converged charges ***********
@@ -239,113 +127,74 @@ conv = 18.8973 / 2625.5  # bohr/nm * au/(kJ/mol)
 zbox=boxVecs[2][2] / nanometer
 Lgap = (zbox - cell_dist) # length of vacuum gap in nanometers, set by choice of simulation box (z-dimension)
 print('length of vacuum gap (nm)', Lgap)
-Niter_max = 10  # maximum steps for convergence
+Niter_max = 3  # maximum steps for convergence
 tol=0.01 # tolerance for average deviation of charges between iteration
-Voltage = 2.0  # external voltage in Volts
+Voltage = float(args.volt)  # external voltage in Volts
 Voltage = Voltage * 96.487  # convert eV to kJ/mol to work in kJ/mol
 q_max = 2.0  # Don't allow charges bigger than this, no physical reason why they should be this big
+f_iter = int(( float(args.nsec) * 1000000 / int(args.nstep) )) + 1  # number of iterations for charge equilibration
+#print('number of iterations', f_iter)
+small = 1e-4
 
-for i in range(1,50001):
+sim.initializeCharge( Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, small)
+
+allEz_cell = []
+allEx_i = []
+allEy_i = []
+allEz_i = []
+for i in range(1, f_iter ):
     print()
     print(i,datetime.now())
 
-    simmd.step(100)
+    sim.simmd.step( int(args.nstep) )
 
-    state = simmd.context.getState(getEnergy=True,getForces=True,getPositions=True)
+    state = sim.simmd.context.getState(getEnergy=True,getForces=True,getPositions=True)
     print(str(state.getKineticEnergy()))
     print(str(state.getPotentialEnergy()))
 
-    for j in range(system.getNumForces()):
-        f = system.getForce(j)
-        print(type(f), str(simmd.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
-
     positions = state.getPositions()
-    simEfield.context.setPositions(positions)
-
-    rms = 0.0
-    flag_conv = -1
-    for i_step in range(Niter_max):
-        print("charge iteration", i_step)
-
-        state2 = simEfield.context.getState(getEnergy=True,getForces=True,getPositions=True)
-        for j in range(system_Efield.getNumForces()):
-                f = system_Efield.getForce(j)
-                print(type(f), str(simEfield.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
-
-        forces = state2.getForces()
-        for i_atom in range(Ngraphene_atoms):
-                index = graph[i_atom]
-                (q_i_old, sig, eps) = nbondedForce_Efield.getParticleParameters(index)
-                q_i_old = q_i_old
-                E_z = forces[index][2]._value / q_i_old._value
-                E_i_external = E_z
-
-                # when we switch to atomic units on the right, sigma/2*epsilon0 becomes 4*pi*sigma/2 , since 4*pi*epsilon0=1 in a.u.
-                if i_atom < Ngraphene_atoms / 2:
-                    q_i = 2.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + E_i_external) * conv
-                else:  # anode
-                    q_i = -2.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + E_i_external) * conv
-
-                # Make sure calculated charge isn't crazy
-                if abs(q_i) > q_max:
-                    # this shouldn't happen.  If this code is run, we might have a problem
-                    # for now, just don't use this new charge
-                    q_i = q_i_old._value
-                    print("ERROR: q_i > q_max: {:f} > {:f}".format(q_i, q_max))
-
-                nbondedForce_Efield.setParticleParameters(index, q_i, sig, eps)
-                rms += (q_i - q_i_old._value)**2
-
-        nbondedForce_Efield.updateParametersInContext(simEfield.context)
-
-        rms = (rms/Ngraphene_atoms)**0.5
-        if rms < tol:
-            flag_conv = i_step
-            break
-
-    # warn if not converged
-    if flag_conv == -1:
-        print("Warning:  Electrode charges did not converge!! rms: %f" % (rms))
-    else:
-        print("Steps to converge: " + str(flag_conv + 1))
-
-    sumq_cathode=0
-    sumq_anode=0
-    print('Final charges on graphene atoms')
-    for i_atom in range(Ngraphene_atoms):
-        index = graph[i_atom]
-        (q_i, sig, eps) = nbondedForce_Efield.getParticleParameters(index)
-        nbondedForce.setParticleParameters(index, q_i, 1.0 , 0.0)
-
-        # if we are on a 1000 step interval, write charges to file
-        # i starts at 0, so at i = 9, 1000 frames will have occured
-        if i % 10 == 0:
-            chargesFile.write("{:f} ".format(q_i._value))
-
-        if i_atom < Ngraphene_atoms / 2:
-            # print charge on one representative atom for debugging fluctuations
-            if i_atom == 100:
-                print('index, charge, sum',index, q_i , sumq_cathode ) 
-            sumq_cathode += q_i._value
-        else:
-            # print charge on one representative atom for debugging fluctuations
-            if i_atom == Ngraphene_atoms/2 + 100:
-                print('index, charge, sum',index, q_i, sumq_anode )
-            sumq_anode += q_i._value
-
-    # write newline to charge file after charge write
-    if i % 10 == 0:
-        chargesFile.write("\n")
-
+    sim.simEfield.context.setPositions(positions)
+    sim.nbondedForce_Efield.updateParametersInContext(sim.simEfield.context)
+    sim.ConvergedCharge( Niter_max, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, q_max )
+    sumq_cathode, sumq_anode = sim.FinalCharge(Ngraphene_atoms, graph, args, i, chargesFile)
     print( 'total charge on graphene (cathode,anode):', sumq_cathode, sumq_anode )
-
     print('Charges converged, Energies from full Force Field')
-    nbondedForce.updateParametersInContext(simmd.context)
+    sim.PrintFinalEnergies()
 
-    state = simmd.context.getState(getEnergy=True,getForces=True,getPositions=True)
-    for j in range(system.getNumForces()):
-        f = system.getForce(j)
-        print(type(f), str(simmd.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
+    ind_Q = get_Efield(solvent_list)
+    ana_Q_Cat, ana_Q_An = ind_Q.induced_q(1.15, 5.8402, cell_dist, sim, positions, Ngraphene_atoms, area_atom, Voltage, Lgap, conv)
+    print('Analytical Q_Cat, Q_An :', ana_Q_Cat, ana_Q_An)
+    
+    sim.Scale_charge( Ngraphene_atoms, graph, ana_Q_Cat, ana_Q_An, sumq_cathode, sumq_anode)
+    state2 = sim.simEfield.context.getState(getEnergy=True,getForces=True,getPositions=True)
+    forces = state2.getForces()
+    
+# get electric field and position for BMIM, acetonitrile, BF4 along z-dimension
+    Efield_cell_i = get_Efield(merge_Hlist)
+    Efield_cell_i.efield(sim, forces)
+    Efield_cell_i.Pos_z(positions)
+    hist1 = hist_Efield(0.025,14, Efield_cell_i.position_z, Efield_cell_i.efieldz)
+    allEz_cell.append( hist1.Efield() )
+  
+# get electric field and position for He atoms
+    Efield_vac_i = get_Efield(He_list)
+    Efield_vac_i.efield(sim, forces)
+    Efield_vac_i.Pos_z(positions)
+    hist_Ex = hist_Efield(0.025,14, Efield_vac_i.position_z, Efield_vac_i.efieldx)
+    hist_Ey = hist_Efield(0.025,14, Efield_vac_i.position_z, Efield_vac_i.efieldy)
+    hist_Ez = hist_Efield(0.025,14, Efield_vac_i.position_z, Efield_vac_i.efieldz)
+    allEx_i.append( hist_Ex.Efield() )
+    allEy_i.append( hist_Ey.Efield() )
+    allEz_i.append( hist_Ez.Efield() )
+    
+meanEz_cell = [sum(e)/len(e) for e in zip(*allEz_cell)]
+meanEx = [sum(e)/len(e) for e in zip(*allEx_i)]
+meanEy = [sum(e)/len(e) for e in zip(*allEy_i)]
+meanEz = [sum(e)/len(e) for e in zip(*allEz_i)]
+hist1.save_hist(meanEz_cell, "Ez_cell_hist.dat")
+hist_Ex.save_hist(meanEx, "Ex_hist.dat")
+hist_Ey.save_hist(meanEy, "Ey_hist.dat")
+hist_Ez.save_hist(meanEz, "Ez_hist.dat")
 
 print('Done!')
 
