@@ -5,6 +5,10 @@
   <Reference></Reference>
  </Info>
  <AtomTypes>
+  <Type name="Hel-He" class="He" element="He" mass="4.0026"/>
+  <Type name="Hpt-HP" class="HP" element="H" mass="1.008"/>
+  <Type name="Chl-Cl" class="Cl" element="Cl" mass="35.053"/>
+  <Type name="ChlP-ClP" class="ClP" element="Cl" mass="35.4035"/>
   <Type name="EMIM-NI1" class="NI1" element="N" mass="13.6067"/>
   <Type name="EMIM-DN1" class="Sh" mass="0.4"/>
   <Type name="EMIM-NI" class="NI" element="N" mass="13.6067"/>
@@ -173,8 +177,7 @@
   <Type name="Chol-O" class="Oh" element="O" mass="15.6"/>
   <Type name="Chol-DO" class="Sh" mass="0.4"/>
   <Type name="Chol-H13" class="Ho" element="H" mass="1.008"/>
-  <Type name="BF4-B" class="B" element="B" mass="10.411"/>
-  <Type name="BF4-DB" class="Sh" mass="0.4"/>
+  <Type name="BF4-B" class="B" element="B" mass="10.811"/>
   <Type name="BF4-F1" class="FI" element="F" mass="18.5984"/>
   <Type name="BF4-DF1" class="Sh" mass="0.4"/>
   <Type name="BF4-F2" class="FI" element="F" mass="18.5984"/>
@@ -308,13 +311,24 @@
   <Type name="dchl-HC3" class="HC" element="H" mass="1.0080"/>
  </AtomTypes>
  <Residues>
+  <Residue name="Hel">
+   <Atom name="He" type="Hel-He"/>
+  </Residue>
+  <Residue name="Hpt">
+   <Atom name="HP" type="Hpt-HP"/>
+  </Residue>
+  <Residue name="Chl">
+   <Atom name="Cl" type="Chl-Cl"/>
+  </Residue>
+  <Residue name="ChlP">
+   <Atom name="ClP" type="ChlP-ClP"/>
+  </Residue>
   <Residue name="BF4">
    <Atom name="B" type="BF4-B"/>
    <Atom name="F1" type="BF4-F1"/>
    <Atom name="F2" type="BF4-F2"/>
    <Atom name="F3" type="BF4-F3"/>
    <Atom name="F4" type="BF4-F4"/>
-   <Atom name="DB" type="BF4-DB"/>
    <Atom name="DF1" type="BF4-DF1"/>
    <Atom name="DF2" type="BF4-DF2"/>
    <Atom name="DF3" type="BF4-DF3"/>
@@ -851,12 +865,16 @@
   </Residue>
  </Residues>
  <NonbondedForce coulomb14scale="0" lj14scale="0">
-  <Atom class="Cgtc" charge="0.1" sigma="1.00000" epsilon="0.00000"/>
-  <Atom class="Cgtd" charge="0.1" sigma="1.00000" epsilon="0.00000"/>
+  <Atom class="Cgtc" charge="0.01" sigma="1.00000" epsilon="0.00000"/>
+  <Atom class="Cgtd" charge="0.01" sigma="1.00000" epsilon="0.00000"/>
   <Atom class="Cgt" charge="0.0" sigma="1.00000" epsilon="0.00000"/>
   <Atom class="Hgt" charge="0.0" sigma="1.00000" epsilon="0.00000"/>
   <Atom class="OH" charge="-0.435" sigma="1.00000" epsilon="0.00000"/>
   <Atom class="HO" charge="0.435" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="Hel-He" charge="0.001" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="Hpt-HP" charge="1.0" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="Chl-Cl" charge="-1.0" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="ChlP-ClP" charge="1.0" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="EMIM-NI1" charge="0.6439" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="EMIM-DN1" charge="-0.8404" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="EMIM-NI" charge="0.6439" sigma="1.00000" epsilon="0.00000"/>
@@ -1025,8 +1043,7 @@
   <Atom type="Chol-O" charge="0.247" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="Chol-DO" charge="-0.817" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="Chol-H13" charge="0.40" sigma="1.00000" epsilon="0.00000"/>
-  <Atom type="BF4-B" charge="1.3538" sigma="1.00000" epsilon="0.00000"/>
-  <Atom type="BF4-DB" charge="-0.1530" sigma="1.00000" epsilon="0.00000"/>
+  <Atom type="BF4-B" charge="1.2008" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="BF4-F1" charge="0.2428" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="BF4-DF1" charge="-0.7930" sigma="1.00000" epsilon="0.00000"/>
   <Atom type="BF4-F2" charge="0.2428" sigma="1.00000" epsilon="0.00000"/>
@@ -1158,7 +1175,6 @@
   <Atom type="dchl-HC3" charge="0.10" sigma="1.00000" epsilon="0.00000"/>
  </NonbondedForce>
  <DrudeForce>
-  <Particle type1="BF4-DB" type2="BF4-B" charge="-0.1530" polarizability="0.00003469" thole="1"/>
   <Particle type1="BF4-DF1" type2="BF4-F1" charge="-0.7930" polarizability="0.000931897" thole="1"/>
   <Particle type1="BF4-DF2" type2="BF4-F2" charge="-0.7930" polarizability="0.000931897" thole="1"/>
   <Particle type1="BF4-DF3" type2="BF4-F3" charge="-0.7930" polarizability="0.000931897" thole="1"/>

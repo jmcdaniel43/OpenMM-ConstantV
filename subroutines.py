@@ -13,6 +13,8 @@ import numpy
 import argparse
 import shutil
 
+#from run_openMM_test_0816 import graph
+
 class MDsimulation:
     def __init__(self, read_pdb, ResidueConnectivityFiles, FF_files, FF_Efield_files):
         strdir = '../'
@@ -259,8 +261,27 @@ class MDsimulation:
             chargesFile.write("\n")
         elif ( int(args.nstep) == 10 and i % 1 == 0 ):
             chargesFile.write("\n")
- 
-        print( 'total charge on graphene (cathode,anode):', sumq_cathode, sumq_anode )
+        
+        return sumq_cathode, sumq_anode
+   
+    def Scale_charge(self, Ngraphene_atoms, graph, ana_Q_Cat, ana_Q_An, sumq_cathode, sumq_anode):
+        Q_cat_scale = 0.
+        Q_an_scale = 0.
+        for i_atom in range(Ngraphene_atoms):
+            index = graph[i_atom]
+            (q_i_num, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+            if i_atom < Ngraphene_atoms / 2:
+                q_i = q_i_num * (ana_Q_Cat/ sumq_cathode)
+                Q_cat_scale += q_i._value
+            else:  # anode
+                q_i = q_i_num * (ana_Q_An/ sumq_anode)
+                Q_an_scale += q_i._value
+            self.nbondedForce_Efield.setParticleParameters(index, q_i, sig, eps)
+            self.nbondedForce.setParticleParameters(index, q_i, sig, eps)
+        self.nbondedForce_Efield.updateParametersInContext(self.simEfield.context)
+        print( 'Updated charge on cathode, anode:', Q_cat_scale, Q_an_scale )
+        return Q_cat_scale, Q_an_scale
+
 
     def PrintFinalEnergies(self):
         self.nbondedForce.updateParametersInContext(self.simmd.context)
@@ -273,7 +294,6 @@ class MDsimulation:
 
 class Graph_list:
     def __init__(self, resname):
-        #MDsimulation.__init__(self, pdb, ResidueConnectivityFiles, FF_files, FF_Efield_files)
         self.resname = resname
         self.res_idx = -1
         self.c562_1 = -1
@@ -308,7 +328,6 @@ class Graph_list:
 
 class solution_Hlist:
     def __init__(self, resname):
-        #MDsimulation.__init__(self, read_pdb, ResidueConnectivityFiles, FF_files, FF_Efield_files)
         self.resname = resname
         self.cation = []
         self.anion = []
@@ -345,7 +364,6 @@ class solution_Hlist:
 
 class solution_allatom:
     def __init__(self, resname):
-        #MDsimulation.__init__(self, read_pdb, ResidueConnectivityFiles, FF_files, FF_Efield_files)
         self.resname = resname
         self.atomlist = []
     def res_list(self, sim):
@@ -359,12 +377,13 @@ class solution_allatom:
 
 class get_Efield:
     def __init__(self, alist):
-        #MDsimulation.__init__(self, read_pdb, ResidueConnectivityFiles, FF_files, FF_Efield_files)
         self.alist = alist
         self.efieldx = []
         self.efieldy = []
         self.efieldz = []
         self.position_z = []
+        self.Q_Cat_ind = 0.
+        self.Q_An_ind = 0.
         self.Q_Cat = 0.
         self.Q_An = 0.
     def efield(self, sim, forces):
@@ -381,16 +400,25 @@ class get_Efield:
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
             self.position_z.append( positions[H_idx][2]._value )
-    def induced_q(self, eletrode_L, eletrode_R, cell_dist, sim, positions):
+    def induced_q(self, eletrode_L, eletrode_R, cell_dist, sim, positions, Ngraphene_atoms, area_atom, Voltage, Lgap, conv):
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
             (q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
             self.position_z.append( positions[H_idx][2]._value )
             zR = eletrode_R - positions[H_idx][2]._value
             zL = positions[H_idx][2]._value - eletrode_L
-            self.Q_Cat += (zR / cell_dist)* (- q_i._value)
-            self.Q_An += (zL / cell_dist)* (- q_i._value)
-        return self.Q_Cat, self.Q_An
+            self.Q_Cat_ind += (zR / cell_dist)* (- q_i._value)
+            self.Q_An_ind += (zL / cell_dist)* (- q_i._value)
+        for i_atom in range(Ngraphene_atoms):
+            if i_atom < Ngraphene_atoms / 2:
+                q_i = 1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap ) * conv
+                self.Q_Cat += q_i
+            else:  # anode
+                q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap ) * conv
+                self.Q_An += q_i
+        ana_Q_Cat =  self.Q_Cat_ind + self.Q_Cat
+        ana_Q_An = self.Q_An_ind + self.Q_An
+        return ana_Q_Cat, ana_Q_An
 
 
 def Distance(p1, p2, initialPositions):
