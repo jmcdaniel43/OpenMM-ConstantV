@@ -166,17 +166,22 @@ class MDsimulation:
                     self.nbondedForce.addException(indexi,indexj,0,1,0,True)
                     self.nbondedForce_Efield.addException(indexi,indexj,0,1,0,True)    
 
-    def initializeCharge(self, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, small):
+    def initializeCharge(self, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, small, cell_dist):
+        sum_Qi_cat = 0.
+        sum_Qi_an = 0.
         for i_atom in range(Ngraphene_atoms):
             index = graph[i_atom]
             (q_i, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
             if i_atom < Ngraphene_atoms / 2:
-                q_i = 1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap ) * conv + small
+                q_i = 1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + Voltage/cell_dist) * conv + small
+                sum_Qi_cat += q_i
             else:  # anode
-                q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap ) * conv - small
+                q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + + Voltage/cell_dist ) * conv - small
+                sum_Qi_an += q_i
             self.nbondedForce_Efield.setParticleParameters(index, q_i, 1.0 , 0.0)
  
         self.nbondedForce_Efield.updateParametersInContext(self.simEfield.context)
+        return sum_Qi_cat, sum_Qi_an
 
     def ConvergedCharge(self, Niter_max, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, q_max):
         rms = 0.0
@@ -265,6 +270,7 @@ class MDsimulation:
         return sumq_cathode, sumq_anode
    
     def Scale_charge(self, Ngraphene_atoms, graph, ana_Q_Cat, ana_Q_An, sumq_cathode, sumq_anode):
+    #def Scale_charge(self, Ngraphene_atoms, graph, Q_Cat_ind, Q_An_ind, sumq_cathode, sumq_anode, sum_Qi_cat, sum_Qi_an):
         Q_cat_scale = 0.
         Q_an_scale = 0.
         for i_atom in range(Ngraphene_atoms):
@@ -272,9 +278,11 @@ class MDsimulation:
             (q_i_num, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
             if i_atom < Ngraphene_atoms / 2:
                 q_i = q_i_num * (ana_Q_Cat/ sumq_cathode)
+                #q_i = q_i_num * ((Q_Cat_ind + sum_Qi_cat)/ sumq_cathode)
                 Q_cat_scale += q_i._value
             else:  # anode
                 q_i = q_i_num * (ana_Q_An/ sumq_anode)
+                #q_i = q_i_num * ((Q_An_ind + sum_Qi_an)/ sumq_anode)
                 Q_an_scale += q_i._value
             self.nbondedForce_Efield.setParticleParameters(index, q_i, sig, eps)
             self.nbondedForce.setParticleParameters(index, q_i, sig, eps)
@@ -400,7 +408,8 @@ class get_Efield:
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
             self.position_z.append( positions[H_idx][2]._value )
-    def induced_q(self, eletrode_L, eletrode_R, cell_dist, sim, positions, Ngraphene_atoms, area_atom, Voltage, Lgap, conv):
+    #def induced_q(self, eletrode_L, eletrode_R, cell_dist, sim, positions):
+    def induced_q(self, eletrode_L, eletrode_R, cell_dist, sim, positions, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv):
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
             (q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
@@ -409,12 +418,16 @@ class get_Efield:
             zL = positions[H_idx][2]._value - eletrode_L
             self.Q_Cat_ind += (zR / cell_dist)* (- q_i._value)
             self.Q_An_ind += (zL / cell_dist)* (- q_i._value)
+#        return self.Q_Cat_ind, self.Q_An_ind
+
         for i_atom in range(Ngraphene_atoms):
+            index = graph[i_atom]
+            (q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(index)
             if i_atom < Ngraphene_atoms / 2:
-                q_i = 1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap ) * conv
+                q_i = 1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + Voltage/cell_dist) * conv
                 self.Q_Cat += q_i
             else:  # anode
-                q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap ) * conv
+                q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + Voltage/cell_dist) * conv
                 self.Q_An += q_i
         ana_Q_Cat =  self.Q_Cat_ind + self.Q_Cat
         ana_Q_An = self.Q_An_ind + self.Q_An
@@ -430,7 +443,7 @@ def Distance(p1, p2, initialPositions):
         cell_dist += (d**2)
 
     cell_dist = cell_dist**(1/2)
-    return(cell_dist)
+    return(cell_dist, pos_c562_1[2]/nanometer, pos_c562_2[2]/nanometer)
 
 
 class hist_Efield:
