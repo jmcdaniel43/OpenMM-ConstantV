@@ -103,7 +103,8 @@ solvent_list.extend(deepcopy(acnt.atomlist))
 sim.exlusionNonbondedForce(graph)
 state = sim.simmd.context.getState(getEnergy=True,getForces=True,getVelocities=True,getPositions=True,getParameters=True)
 initialPositions = state.getPositions()
-cell_dist = Distance(grpc.c562_1, grpc.c562_2, initialPositions)
+cell_dist, z_L, z_R = Distance(grpc.c562_1, grpc.c562_2, initialPositions)
+print(z_L, z_R)
 print('cathode-anode distance (nm)', cell_dist)
 
 boxVecs = sim.simmd.topology.getPeriodicBoxVectors()
@@ -136,7 +137,7 @@ f_iter = int(( float(args.nsec) * 1000000 / int(args.nstep) )) + 1  # number of 
 #print('number of iterations', f_iter)
 small = 1e-4
 
-sim.initializeCharge( Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, small)
+sim.initializeCharge( Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, small, cell_dist)
 
 allEz_cell = []
 allEx_i = []
@@ -162,40 +163,13 @@ for i in range(1, f_iter ):
     sim.PrintFinalEnergies()
 
     ind_Q = get_Efield(solvent_list)
-    ana_Q_Cat, ana_Q_An = ind_Q.induced_q(1.15, 5.8402, cell_dist, sim, positions, Ngraphene_atoms, area_atom, Voltage, Lgap, conv)
+    ana_Q_Cat, ana_Q_An = ind_Q.induced_q(z_L, z_R , cell_dist, sim, positions, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv)
     print('Analytical Q_Cat, Q_An :', ana_Q_Cat, ana_Q_An)
     
     sim.Scale_charge( Ngraphene_atoms, graph, ana_Q_Cat, ana_Q_An, sumq_cathode, sumq_anode)
     state2 = sim.simEfield.context.getState(getEnergy=True,getForces=True,getPositions=True)
     forces = state2.getForces()
     
-# get electric field and position for BMIM, acetonitrile, BF4 along z-dimension
-    Efield_cell_i = get_Efield(merge_Hlist)
-    Efield_cell_i.efield(sim, forces)
-    Efield_cell_i.Pos_z(positions)
-    hist1 = hist_Efield(0.025,14, Efield_cell_i.position_z, Efield_cell_i.efieldz)
-    allEz_cell.append( hist1.Efield() )
-  
-# get electric field and position for He atoms
-    Efield_vac_i = get_Efield(He_list)
-    Efield_vac_i.efield(sim, forces)
-    Efield_vac_i.Pos_z(positions)
-    hist_Ex = hist_Efield(0.025,14, Efield_vac_i.position_z, Efield_vac_i.efieldx)
-    hist_Ey = hist_Efield(0.025,14, Efield_vac_i.position_z, Efield_vac_i.efieldy)
-    hist_Ez = hist_Efield(0.025,14, Efield_vac_i.position_z, Efield_vac_i.efieldz)
-    allEx_i.append( hist_Ex.Efield() )
-    allEy_i.append( hist_Ey.Efield() )
-    allEz_i.append( hist_Ez.Efield() )
-    
-meanEz_cell = [sum(e)/len(e) for e in zip(*allEz_cell)]
-meanEx = [sum(e)/len(e) for e in zip(*allEx_i)]
-meanEy = [sum(e)/len(e) for e in zip(*allEy_i)]
-meanEz = [sum(e)/len(e) for e in zip(*allEz_i)]
-hist1.save_hist(meanEz_cell, "Ez_cell_hist.dat")
-hist_Ex.save_hist(meanEx, "Ex_hist.dat")
-hist_Ey.save_hist(meanEy, "Ey_hist.dat")
-hist_Ez.save_hist(meanEz, "Ez_hist.dat")
-
 print('Done!')
 
 exit()
