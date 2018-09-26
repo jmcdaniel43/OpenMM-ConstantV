@@ -13,8 +13,6 @@ import numpy
 import argparse
 import shutil
 
-#from run_openMM_test_0816 import graph
-
 class MDsimulation:
     def __init__(self, read_pdb, ResidueConnectivityFiles, FF_files, FF_Efield_files):
         strdir = '../'
@@ -260,11 +258,16 @@ class MDsimulation:
             if ( int(args.nstep) == 10 and i % 1 == 0 ):
                 chargesFile.write("{:f} ".format(q_i._value))
  
+            if ( int(args.nstep) == 50 and i % 1 == 0 ):
+                chargesFile.write("{:f} ".format(q_i._value))
+ 
         # write newline to charge file after charge write
         #if i % 10 == 0:
         if ( int(args.nstep) == 1 and i % 10 == 0 ):
             chargesFile.write("\n")
         elif ( int(args.nstep) == 10 and i % 1 == 0 ):
+            chargesFile.write("\n")
+        elif ( int(args.nstep) == 50 and i % 1 == 0 ):
             chargesFile.write("\n")
         
         return sumq_cathode, sumq_anode
@@ -384,6 +387,7 @@ class solution_allatom:
 
 
 class get_Efield:
+    #def __init__(self, alist, sim, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, cell_dist, conv):
     def __init__(self, alist):
         self.alist = alist
         self.efieldx = []
@@ -394,6 +398,9 @@ class get_Efield:
         self.Q_An_ind = 0.
         self.Q_Cat = 0.
         self.Q_An = 0.
+        self.ana_Q_Cat = 0.
+        self.ana_Q_An = 0.
+
     def efield(self, sim, forces):
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
@@ -412,13 +419,14 @@ class get_Efield:
     def induced_q(self, eletrode_L, eletrode_R, cell_dist, sim, positions, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv):
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
-            (q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
+            (q_H_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
             self.position_z.append( positions[H_idx][2]._value )
             zR = eletrode_R - positions[H_idx][2]._value
             zL = positions[H_idx][2]._value - eletrode_L
-            self.Q_Cat_ind += (zR / cell_dist)* (- q_i._value)
-            self.Q_An_ind += (zL / cell_dist)* (- q_i._value)
-#        return self.Q_Cat_ind, self.Q_An_ind
+            self.Q_Cat_ind += (zR / cell_dist)* (- q_H_i._value)
+            self.Q_An_ind += (zL / cell_dist)* (- q_H_i._value)
+        #return self.Q_Cat_ind, self.Q_An_ind
+
 
         for i_atom in range(Ngraphene_atoms):
             index = graph[i_atom]
@@ -429,9 +437,9 @@ class get_Efield:
             else:  # anode
                 q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + Voltage/cell_dist) * conv
                 self.Q_An += q_i
-        ana_Q_Cat =  self.Q_Cat_ind + self.Q_Cat
-        ana_Q_An = self.Q_An_ind + self.Q_An
-        return ana_Q_Cat, ana_Q_An
+        self.ana_Q_Cat =  self.Q_Cat_ind + self.Q_Cat
+        self.ana_Q_An = self.Q_An_ind + self.Q_An
+        return self.ana_Q_Cat, self.ana_Q_An
 
 
 def Distance(p1, p2, initialPositions):
