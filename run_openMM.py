@@ -163,10 +163,12 @@ for i in range(1, f_iter ):
     sim.PrintFinalEnergies()
 
     ind_Q = get_Efield(solvent_list)
-    ana_Q_Cat, ana_Q_An = ind_Q.induced_q(z_L, z_R , cell_dist, sim, positions, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv)
+    numpy.vectorize(ind_Q.induced_q(z_L, z_R , cell_dist, sim, positions, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv))
+    ana_Q_Cat, ana_Q_An = ind_Q.ana_Q_Cat, ind_Q.ana_Q_An
+    #ana_Q_An = ind_Q.ana_Q_An
     print('Analytical Q_Cat, Q_An :', ana_Q_Cat, ana_Q_An)
     
-    sim.Scale_charge( Ngraphene_atoms, graph, ana_Q_Cat, ana_Q_An, sumq_cathode, sumq_anode)
+    numpy.vectorize(sim.Scale_charge( Ngraphene_atoms, graph, ana_Q_Cat, ana_Q_An, sumq_cathode, sumq_anode))
     state2 = sim.simEfield.context.getState(getEnergy=True,getForces=True,getPositions=True)
     forces = state2.getForces()
     
