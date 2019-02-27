@@ -1,0 +1,28 @@
+#PBS -N 37pct
+#PBS -q gemini-gpu
+#PBS -o log.$PBS_JOBID
+#PBS -e error.$PBS_JOBID
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=240:00:00
+
+cd $PBS_O_WORKDIR
+
+hostname
+
+module load cuda/9.0
+module load anaconda3/latest
+
+# fill this in with your OpenMM conda environment
+source activate my_python-3.6
+
+export OPENMM_CUDA_COMPILER=$(which nvcc)
+export CUDA_CACHE_PATH=${TMPDIR}
+export OPENMM_CPU_THREADS=1
+
+string=""
+flag=0
+i=0
+arr=(`nvidia-smi | grep -A 12 "Processes" | grep "python"  | cut -c 3-7`)
+while [ $i -lt 8 ] ; do if [[ " ${arr[@]} " =~ $i ]]; then junk=junk ; elif [[ ${flag} == 1 ]]; then string="$string"; else string="$i"; ((flag+=1)) ; fi; ((i+=1)); done
+
+python run_openMM_1context.py npt_37pct_5ns.pdb --nstep 50 --volt 2 --nsec 5 --devices "$string" --temp 300

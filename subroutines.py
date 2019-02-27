@@ -13,11 +13,16 @@ import numpy
 import argparse
 import shutil
 
+#from run_openMM_test_0816 import graph
+
 class MDsimulation:
-    def __init__(self, read_pdb, ResidueConnectivityFiles, FF_files, FF_Efield_files):
+    def __init__(self, read_pdb, index, temperature, ResidueConnectivityFiles, FF_files):
+    #def __init__(self, read_pdb, temperature, ResidueConnectivityFiles, FF_files):
+    #def __init__(self, read_pdb, temperature, ResidueConnectivityFiles, FF_files, FF_Efield_files):
         strdir = '../'
         pdb = PDBFile( strdir + read_pdb)
-        self.temperature = 300*kelvin
+        self.index = index
+        self.temperature = temperature
         self.cutoff = 1.4*nanometer
 
         integ_md = DrudeLangevinIntegrator(self.temperature, 1/picosecond, 1*kelvin, 1/picosecond, 0.001*picoseconds)
@@ -32,11 +37,12 @@ class MDsimulation:
         forcefield = ForceField(*FF_files)
         modeller.addExtraParticles(forcefield)
 
-        modeller2 = Modeller(pdb.topology, pdb.positions)
-        forcefield_Efield = ForceField(*FF_Efield_files)
-        modeller2.addExtraParticles(forcefield_Efield)
+#        modeller2 = Modeller(pdb.topology, pdb.positions)
+#        forcefield_Efield = ForceField(*FF_Efield_files)
+#        modeller2.addExtraParticles(forcefield_Efield)
         
-        self.system = forcefield.createSystem(modeller.topology, nonbondedCutoff=self.cutoff, constraints=None, rigidWater=True)
+        #self.system = forcefield.createSystem(modeller.topology, nonbondedCutoff=self.cutoff, constraints=None, rigidWater=True)
+        self.system = forcefield.createSystem(modeller.topology, nonbondedCutoff=self.cutoff, constraints=HBonds, rigidWater=True)
         self.nbondedForce = [f for f in [self.system.getForce(i) for i in range(self.system.getNumForces())] if type(f) == NonbondedForce][0]
         self.customNonbondedForce = [f for f in [self.system.getForce(i) for i in range(self.system.getNumForces())] if type(f) == CustomNonbondedForce][0]
         self.drudeForce = [f for f in [self.system.getForce(i) for i in range(self.system.getNumForces())] if type(f) == DrudeForce][0]
@@ -54,32 +60,45 @@ class MDsimulation:
                 f.setUsesPeriodicBoundaryConditions(True)
             f.usesPeriodicBoundaryConditions()
 
-        # set up system2 for Efield calculation
-        self.system_Efield = forcefield_Efield.createSystem(modeller2.topology, nonbondedCutoff=self.cutoff, constraints=None, rigidWater=True) 
-        self.nbondedForce_Efield = [f for f in [self.system_Efield.getForce(i) for i in range(self.system_Efield.getNumForces())] if type(f) == NonbondedForce][0]
-        self.nbondedForce_Efield.setNonbondedMethod(NonbondedForce.PME)
-
-        for i in range(self.system_Efield.getNumForces()): 
-            f = self.system_Efield.getForce(i)
-            type(f)
-            f.setForceGroup(i)
+#        # set up system2 for Efield calculation
+#        self.system_Efield = forcefield_Efield.createSystem(modeller2.topology, nonbondedCutoff=self.cutoff, constraints=None, rigidWater=True) 
+#        self.nbondedForce_Efield = [f for f in [self.system_Efield.getForce(i) for i in range(self.system_Efield.getNumForces())] if type(f) == NonbondedForce][0]
+#        self.nbondedForce_Efield.setNonbondedMethod(NonbondedForce.PME)
+#
+#        for i in range(self.system_Efield.getNumForces()): 
+#            f = self.system_Efield.getForce(i)
+#            type(f)
+#            f.setForceGroup(i)
 
         totmass = 0.*dalton
         for i in range(self.system.getNumParticles()):
             totmass += self.system.getParticleMass(i)
 
         platform = Platform.getPlatformByName('CUDA')
+        #idx=self.index.split(",")
+        #properties = {'DeviceIndex': idx[0], 'Precision': 'mixed'}
+        properties = {'DeviceIndex': self.index, 'Precision': 'single'}
+        #properties = {'DeviceIndex': self.index, 'Precision': 'mixed'}
         #platform = Platform.getPlatformByName('OpenCL')
         #properties = {'OpenCLPrecision': 'mixed'}
-        self.simmd = Simulation(modeller.topology, self.system, integ_md, platform)
+        #properties = {'OpenCLPrecision': 'double','OpenCLDeviceIndex': self.index}
+        self.simmd = Simulation(modeller.topology, self.system, integ_md, platform, properties)
+        #self.simmd = Simulation(modeller.topology, self.system, integ_md, platform)
         self.simmd.context.setPositions(modeller.positions)
 
         # set up simulation for Efield
-        self.simEfield = Simulation(modeller2.topology, self.system_Efield, integ_junk, platform)
+        #properties2 = {'DeviceIndex':  idx[1], 'Precision': 'mixed'}
+        #self.simEfield = Simulation(modeller2.topology, self.system_Efield, integ_junk, platform, properties2)
+        #platform2 = Platform.getPlatformByName('CPU')
+        #self.simEfield = Simulation(modeller2.topology, self.system_Efield, integ_junk, platform2)
         
         platform = self.simmd.context.getPlatform()
         platformname = platform.getName();
         print(platformname)
+
+        #platform2 = self.simEfield.context.getPlatform()
+        #platformname2 = platform2.getName();
+        #print(platformname2)
 
 	# Initialize energy
         state = self.simmd.context.getState(getEnergy=True,getForces=True,getVelocities=True,getPositions=True)	
@@ -93,11 +112,14 @@ class MDsimulation:
 	# write initial pdb with drude oscillators
         position = state.getPositions()
         self.simmd.topology.setPeriodicBoxVectors(state.getPeriodicBoxVectors())
-        PDBFile.writeFile(self.simmd.topology, position, open('start_drudes.pdb', 'w'))
+        PDBFile.writeFile(self.simmd.topology, position, open('start_drudes'+ str(int(self.temperature)) +'.pdb', 'w'))
+        #PDBFile.writeFile(self.simmd.topology, position, open('start_drudes.pdb', 'w'))
         
         self.simmd.reporters = []
-        self.simmd.reporters.append(DCDReporter('md_nvt.dcd', 1000))
-        self.simmd.reporters.append(CheckpointReporter('md_nvt.chk', 10000))
+        #self.simmd.reporters.append(DCDReporter('md_nvt.dcd', 1000))
+        #self.simmd.reporters.append(CheckpointReporter('md_nvt.chk', 10000))
+        self.simmd.reporters.append(DCDReporter('md_nvt' + str(int(self.temperature)) + '.dcd', 1000))
+        self.simmd.reporters.append(CheckpointReporter('md_nvt' + str(int(self.temperature)) + '.chk', 10000))
         self.simmd.reporters[1].report(self.simmd,state)
 
         self.flagexclusions = {}
@@ -123,7 +145,7 @@ class MDsimulation:
             f = self.system.getForce(j)
             print(type(f), str(self.simmd.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
 
-    def exlusionNonbondedForce(self, graph):
+    def exlusionNonbondedForce(self, graph, grph):
     #******* JGM ****************
     # add exclusions for intra-sheet non-bonded interactions.
     
@@ -140,45 +162,52 @@ class MDsimulation:
     #cathode first.
         for i in range(int(len(graph)/2)):
             indexi = graph[i]
-            for j in range(i+1,int(len(graph)/2)):
-                indexj = graph[j]
+            #for j in range(i+1,int(len(grph)/2)):
+            for j in range(int(len(grph)/2)):
+                indexj = grph[j]
                 string1=str(indexi)+"_"+str(indexj)
                 string2=str(indexj)+"_"+str(indexi)
-                if string1 in self.flagexclusions and string2 in self.flagexclusions:
-                    continue
-                else:
-                    self.customNonbondedForce.addExclusion(indexi,indexj)
-                    self.nbondedForce.addException(indexi,indexj,0,1,0,True)
-                    self.nbondedForce_Efield.addException(indexi,indexj,0,1,0,True)
+                self.customNonbondedForce.addExclusion(indexi,indexj)
+                self.nbondedForce.addException(indexi,indexj,0,1,0,True)
+                #if string1 in self.flagexclusions and string2 in self.flagexclusions:
+                #    continue
+                #else:
+                #    self.customNonbondedForce.addExclusion(indexi,indexj)
+                #    self.nbondedForce.addException(indexi,indexj,0,1,0,True)
+                    #self.nbondedForce_Efield.addException(indexi,indexj,0,1,0,True)
     #now anode
         for i in range(int(len(graph)/2),len(graph)):
             indexi = graph[i]
-            for j in range(i+1,int(len(graph)/2)):
-                indexj = graph[j]
+            #for j in range(i+1,int(len(graph)/2)):
+            for j in range(int(len(grph)/2),len(grph)):
+                indexj = grph[j]
                 string1=str(indexi)+"_"+str(indexj)
                 string2=str(indexj)+"_"+str(indexi)
-                if string1 in self.flagexclusions and string2 in self.flagexclusions:
-                    continue
-                else:
-                    self.customNonbondedForce.addExclusion(indexi,indexj)
-                    self.nbondedForce.addException(indexi,indexj,0,1,0,True)
-                    self.nbondedForce_Efield.addException(indexi,indexj,0,1,0,True)    
+                self.customNonbondedForce.addExclusion(indexi,indexj)
+                self.nbondedForce.addException(indexi,indexj,0,1,0,True)
+                #if string1 in self.flagexclusions and string2 in self.flagexclusions:
+                #    continue
+                #else:
+                #    self.customNonbondedForce.addExclusion(indexi,indexj)
+                #    self.nbondedForce.addException(indexi,indexj,0,1,0,True)
+                #    #self.nbondedForce_Efield.addException(indexi,indexj,0,1,0,True)    
 
     def initializeCharge(self, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, small, cell_dist):
         sum_Qi_cat = 0.
         sum_Qi_an = 0.
         for i_atom in range(Ngraphene_atoms):
             index = graph[i_atom]
-            (q_i, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+            (q_i, sig, eps) = self.nbondedForce.getParticleParameters(index)
             if i_atom < Ngraphene_atoms / 2:
                 q_i = 1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + Voltage/cell_dist) * conv + small
                 sum_Qi_cat += q_i
             else:  # anode
                 q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + + Voltage/cell_dist ) * conv - small
                 sum_Qi_an += q_i
-            self.nbondedForce_Efield.setParticleParameters(index, q_i, 1.0 , 0.0)
+            self.nbondedForce.setParticleParameters(index, q_i, 1.0 , 0.0)
  
-        self.nbondedForce_Efield.updateParametersInContext(self.simEfield.context)
+        #self.nbondedForce.updateParametersInContext(self.simEfield.context)
+        self.nbondedForce.updateParametersInContext(self.simmd.context)
         return sum_Qi_cat, sum_Qi_an
 
     def ConvergedCharge(self, Niter_max, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv, q_max):
@@ -187,18 +216,27 @@ class MDsimulation:
         for i_step in range(Niter_max):
             print("charge iteration", i_step)
  
-            state2 = self.simEfield.context.getState(getEnergy=True,getForces=True,getPositions=True)
-            for j in range(self.system_Efield.getNumForces()):
-                    f = self.system_Efield.getForce(j)
-                    print(type(f), str(self.simEfield.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
- 
-            forces = state2.getForces()
+            state = self.simmd.context.getState(getEnergy=True,getForces=True,getVelocities=True,getPositions=True)
+            for j in range(self.system.getNumForces()):
+                f = self.system.getForce(j)
+                print(type(f), str(self.simmd.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
+#            state2 = self.simEfield.context.getState(getEnergy=True,getForces=True,getPositions=True)
+#            for j in range(self.system_Efield.getNumForces()):
+#                    f = self.system_Efield.getForce(j)
+#                    print(type(f), str(self.simEfield.context.getState(getEnergy=True, groups=2**j).getPotentialEnergy()))
+# 
+#            forces = state2.getForces()
+            forces = state.getForces()
+            #positions= state.getPositions()
             for i_atom in range(Ngraphene_atoms):
                     index = graph[i_atom]
-                    (q_i_old, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+                    #(q_i_old, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+                    (q_i_old, sig, eps) = self.nbondedForce.getParticleParameters(index)
                     q_i_old = q_i_old
-                    E_z = ( forces[index][2]._value / q_i_old._value ) if q_i_old._value != 0 else 0
+                    #E_z = ( forces[index][2]._value / q_i_old._value ) if q_i_old._value != 0 else 0
+                    E_z = ( forces[index][2]._value / q_i_old._value ) if abs(q_i_old._value) > 1e-5 else 0.
                     E_i_external = E_z
+                    #print(i_atom, area_atom, E_i_external, Lgap, forces[index])
  
                     # when we switch to atomic units on the right, sigma/2*epsilon0 becomes 4*pi*sigma/2 , since 4*pi*epsilon0=1 in a.u.
                     if i_atom < Ngraphene_atoms / 2:
@@ -213,10 +251,12 @@ class MDsimulation:
                         q_i = q_i_old._value
                         print("ERROR: q_i > q_max: {:f} > {:f}".format(q_i, q_max))
  
-                    self.nbondedForce_Efield.setParticleParameters(index, q_i, sig, eps)
+                    #self.nbondedForce_Efield.setParticleParameters(index, q_i, sig, eps)
+                    self.nbondedForce.setParticleParameters(index, q_i, sig, eps)
                     rms += (q_i - q_i_old._value)**2
  
-            self.nbondedForce_Efield.updateParametersInContext(self.simEfield.context)
+            #self.nbondedForce_Efield.updateParametersInContext(self.simEfield.context)
+            self.nbondedForce.updateParametersInContext(self.simmd.context)
  
             #rms = (rms/Ngraphene_atoms)**0.5
             #if rms < tol:
@@ -234,7 +274,8 @@ class MDsimulation:
         print('Final charges on graphene atoms')
         for i_atom in range(Ngraphene_atoms):
             index = graph[i_atom]
-            (q_i, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+            #(q_i, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+            (q_i, sig, eps) = self.nbondedForce.getParticleParameters(index)
             self.nbondedForce.setParticleParameters(index, q_i, 1.0 , 0.0)
  
             if i_atom < Ngraphene_atoms / 2:
@@ -249,26 +290,26 @@ class MDsimulation:
                     print('index, charge, sum',index, q_i, sumq_anode )
                 sumq_anode += q_i._value
  
-            # if we are on a 1000 step interval, write charges to file
-            # i starts at 0, so at i = 9, 1000 frames will have occured
-            #if i % 10 == 0:
-            if ( int(args.nstep) == 1 and i % 10 == 0 ):
-                chargesFile.write("{:f} ".format(q_i._value))
- 
-            if ( int(args.nstep) == 10 and i % 1 == 0 ):
-                chargesFile.write("{:f} ".format(q_i._value))
- 
-            if ( int(args.nstep) == 50 and i % 1 == 0 ):
-                chargesFile.write("{:f} ".format(q_i._value))
- 
-        # write newline to charge file after charge write
-        #if i % 10 == 0:
-        if ( int(args.nstep) == 1 and i % 10 == 0 ):
-            chargesFile.write("\n")
-        elif ( int(args.nstep) == 10 and i % 1 == 0 ):
-            chargesFile.write("\n")
-        elif ( int(args.nstep) == 50 and i % 1 == 0 ):
-            chargesFile.write("\n")
+#            # if we are on a 1000 step interval, write charges to file
+#            # i starts at 0, so at i = 9, 1000 frames will have occured
+#            #if i % 10 == 0:
+#            if ( int(args.nstep) == 1 and i % 10 == 0 ):
+#                chargesFile.write("{:f} ".format(q_i._value))
+# 
+#            if ( int(args.nstep) == 10 and i % 1 == 0 ):
+#                chargesFile.write("{:f} ".format(q_i._value))
+# 
+#            if ( int(args.nstep) == 50 and i % 1 == 0 ):
+#                chargesFile.write("{:f} ".format(q_i._value))
+#
+#        # write newline to charge file after charge write
+#        #if i % 10 == 0:
+#        if ( int(args.nstep) == 1 and i % 10 == 0 ):
+#            chargesFile.write("\n")
+#        elif ( int(args.nstep) == 10 and i % 1 == 0 ):
+#            chargesFile.write("\n")
+#        elif ( int(args.nstep) == 50 and i % 1 == 0 ):
+#            chargesFile.write("\n")
         
         return sumq_cathode, sumq_anode
    
@@ -278,18 +319,20 @@ class MDsimulation:
         Q_an_scale = 0.
         for i_atom in range(Ngraphene_atoms):
             index = graph[i_atom]
-            (q_i_num, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+            #(q_i_num, sig, eps) = self.nbondedForce_Efield.getParticleParameters(index)
+            (q_i_num, sig, eps) = self.nbondedForce.getParticleParameters(index)
             if i_atom < Ngraphene_atoms / 2:
-                q_i = q_i_num * (ana_Q_Cat/ sumq_cathode)
+                q_i = q_i_num * (ana_Q_Cat/ sumq_cathode) if abs(sumq_cathode) > 1e-4 else q_i_num *0.
                 #q_i = q_i_num * ((Q_Cat_ind + sum_Qi_cat)/ sumq_cathode)
                 Q_cat_scale += q_i._value
             else:  # anode
-                q_i = q_i_num * (ana_Q_An/ sumq_anode)
+                q_i = q_i_num * (ana_Q_An/ sumq_anode) if abs(sumq_anode) > 1e-4 else q_i_num *0.
                 #q_i = q_i_num * ((Q_An_ind + sum_Qi_an)/ sumq_anode)
                 Q_an_scale += q_i._value
-            self.nbondedForce_Efield.setParticleParameters(index, q_i, sig, eps)
+            #self.nbondedForce_Efield.setParticleParameters(index, q_i, sig, eps)
             self.nbondedForce.setParticleParameters(index, q_i, sig, eps)
-        self.nbondedForce_Efield.updateParametersInContext(self.simEfield.context)
+        #self.nbondedForce_Efield.updateParametersInContext(self.simEfield.context)
+        self.nbondedForce.updateParametersInContext(self.simmd.context)
         print( 'Updated charge on cathode, anode:', Q_cat_scale, Q_an_scale )
         return Q_cat_scale, Q_an_scale
 
@@ -312,13 +355,14 @@ class Graph_list:
         self.cathode = []
         self.anode = []
         self.dummy = []
+        self.neutral = []
     def grpclist(self, sim):
         for res in sim.simmd.topology.residues():
             if res.name == self.resname:
                 for atom in res._atoms:
                     (q_i, sig, eps) = sim.nbondedForce.getParticleParameters(atom.index)
-                    if q_i._value != 0:
-                        print(atom, q_i)
+                    #if q_i._value != 0:
+                    #    print(atom, q_i)
                 if self.res_idx == -1:
                     self.res_idx = res.index
                     for atom in res._atoms:
@@ -335,6 +379,11 @@ class Graph_list:
                 for atom in res._atoms:
                     (q_i, sig, eps) = sim.nbondedForce.getParticleParameters(int(atom.index))
                     self.dummy.append( int(atom.index) )
+
+            if res.name == self.resname:
+                for atom in res._atoms:
+                    (q_i, sig, eps) = sim.nbondedForce.getParticleParameters(int(atom.index))
+                    self.neutral.append( int(atom.index) )
 
 
 class solution_Hlist:
@@ -387,7 +436,6 @@ class solution_allatom:
 
 
 class get_Efield:
-    #def __init__(self, alist, sim, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, cell_dist, conv):
     def __init__(self, alist):
         self.alist = alist
         self.efieldx = []
@@ -398,13 +446,11 @@ class get_Efield:
         self.Q_An_ind = 0.
         self.Q_Cat = 0.
         self.Q_An = 0.
-        self.ana_Q_Cat = 0.
-        self.ana_Q_An = 0.
-
     def efield(self, sim, forces):
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
-            (q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
+            #(q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
+            (q_i, sig, eps) = sim.nbondedForce.getParticleParameters(H_idx)
             E_x_i = ( forces[H_idx][0]._value / q_i._value ) if q_i._value != 0 else 0
             E_y_i = ( forces[H_idx][1]._value / q_i._value ) if q_i._value != 0 else 0
             E_z_i = ( forces[H_idx][2]._value / q_i._value ) if q_i._value != 0 else 0
@@ -419,27 +465,28 @@ class get_Efield:
     def induced_q(self, eletrode_L, eletrode_R, cell_dist, sim, positions, Ngraphene_atoms, graph, area_atom, Voltage, Lgap, conv):
         for H_i in range(len(self.alist)):
             H_idx = self.alist[H_i]
-            (q_H_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
+            #(q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(H_idx)
+            (q_i, sig, eps) = sim.nbondedForce.getParticleParameters(H_idx)
             self.position_z.append( positions[H_idx][2]._value )
             zR = eletrode_R - positions[H_idx][2]._value
             zL = positions[H_idx][2]._value - eletrode_L
-            self.Q_Cat_ind += (zR / cell_dist)* (- q_H_i._value)
-            self.Q_An_ind += (zL / cell_dist)* (- q_H_i._value)
-        #return self.Q_Cat_ind, self.Q_An_ind
-
+            self.Q_Cat_ind += (zR / cell_dist)* (- q_i._value)
+            self.Q_An_ind += (zL / cell_dist)* (- q_i._value)
+#        return self.Q_Cat_ind, self.Q_An_ind
 
         for i_atom in range(Ngraphene_atoms):
             index = graph[i_atom]
-            (q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(index)
+            #(q_i, sig, eps) = sim.nbondedForce_Efield.getParticleParameters(index)
+            (q_i, sig, eps) = sim.nbondedForce.getParticleParameters(index)
             if i_atom < Ngraphene_atoms / 2:
                 q_i = 1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + Voltage/cell_dist) * conv
                 self.Q_Cat += q_i
             else:  # anode
                 q_i = -1.0 / ( 4.0 * 3.14159265 ) * area_atom * (Voltage / Lgap + Voltage/cell_dist) * conv
                 self.Q_An += q_i
-        self.ana_Q_Cat =  self.Q_Cat_ind + self.Q_Cat
-        self.ana_Q_An = self.Q_An_ind + self.Q_An
-        return self.ana_Q_Cat, self.ana_Q_An
+        ana_Q_Cat =  self.Q_Cat_ind + self.Q_Cat
+        ana_Q_An = self.Q_An_ind + self.Q_An
+        return ana_Q_Cat, ana_Q_An
 
 
 def Distance(p1, p2, initialPositions):
@@ -451,7 +498,7 @@ def Distance(p1, p2, initialPositions):
         cell_dist += (d**2)
 
     cell_dist = cell_dist**(1/2)
-    return(cell_dist, pos_c562_1[2]/nanometer, pos_c562_2[2]/nanometer)
+    return cell_dist, pos_c562_1[2]/nanometer, pos_c562_2[2]/nanometer
 
 
 class hist_Efield:

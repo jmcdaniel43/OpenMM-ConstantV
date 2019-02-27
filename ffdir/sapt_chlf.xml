@@ -1,0 +1,17 @@
+<Residues>
+  <Residue name="chlf">
+   <Atom name="CT" type="chlf-CT"/>
+   <Atom name="Cl1" type="chlf-Cl1"/>
+   <Atom name="Cl2" type="chlf-Cl2"/>
+   <Atom name="Cl3" type="chlf-Cl3"/>
+   <Atom name="HC" type="chlf-HC"/>
+   <Atom name="DCT" type="chlf-DCT"/>
+   <Atom name="DCl1" type="chlf-DCl1"/>
+   <Atom name="DCl2" type="chlf-DCl2"/>
+   <Atom name="DCl3" type="chlf-DCl3"/>
+   <Bond from="CT" to="Cl1"/>
+   <Bond from="CT" to="Cl2"/>
+   <Bond from="CT" to="Cl3"/>
+   <Bond from="CT" to="HC"/>
+  </Residue>
+</Residues>
