@@ -1,23 +1,4 @@
 <Residues>
-  <Residue name="Hel">
-   <Atom name="He" type="Hel-He"/>
-  </Residue>
-  <Residue name="Hpt">
-   <Atom name="HP" type="Hpt-HP"/>
-  </Residue>
-  <Residue name="Chl">
-   <Atom name="Cl" type="Chl-Cl"/>
-  </Residue>
-  <Residue name="HOH">
-   <Atom name="O" type="swm4ndp-O"/>
-   <Atom name="H1" type="swm4ndp-H"/>
-   <Atom name="H2" type="swm4ndp-H"/>
-   <Atom name="M" type="swm4ndp-M"/>
-   <Atom name="DO" type="swm4ndp-DO"/>
-   <VirtualSite type="average3" index="3" atom1="0" atom2="1" atom3="2" weight1="0.589781071" weight2="0.2051094645" weight3="0.2051094645"/>
-   <Bond from="O" to="H1"/>
-   <Bond from="O" to="H2"/>
-  </Residue>
   <Residue name="PC">
    <Atom name="Or" type="PC-Or"/>
    <Atom name="Or1" type="PC-Or1"/>
@@ -52,6 +33,21 @@
    <Bond from="CT" to="H4"/>
    <Bond from="CT" to="H5"/>
    <Bond from="CT" to="H6"/>
+  </Residue>
+  <Residue name="chlf">
+   <Atom name="CT" type="chlf-CT"/>
+   <Atom name="Cl1" type="chlf-Cl1"/>
+   <Atom name="Cl2" type="chlf-Cl2"/>
+   <Atom name="Cl3" type="chlf-Cl3"/>
+   <Atom name="HC" type="chlf-HC"/>
+   <Atom name="DCT" type="chlf-DCT"/>
+   <Atom name="DCl1" type="chlf-DCl1"/>
+   <Atom name="DCl2" type="chlf-DCl2"/>
+   <Atom name="DCl3" type="chlf-DCl3"/>
+   <Bond from="CT" to="Cl1"/>
+   <Bond from="CT" to="Cl2"/>
+   <Bond from="CT" to="Cl3"/>
+   <Bond from="CT" to="HC"/>
   </Residue>
   <Residue name="dchl">
    <Atom name="CT" type="dchl-CT"/>
@@ -116,22 +112,17 @@
    <Bond from="C3a1" to="H3a5"/>
  </Residue>
  <Residue name="NO3">
-  <Atom name="M" type="NO3-M1"/>
+  <Atom name="N" type="NO3-B"/>
   <Atom name="O1" type="NO3-O1"/>
   <Atom name="O2" type="NO3-O2"/>
   <Atom name="O3" type="NO3-O3"/>
-  <Atom name="N" type="NO3-N1"/>
   <Atom name="DN" type="NO3-DN"/>
   <Atom name="DO1" type="NO3-DO1"/>
   <Atom name="DO2" type="NO3-DO2"/>
   <Atom name="DO3" type="NO3-DO3"/>
-  <VirtualSite type="average3" index="4" atom1="1" atom2="2" atom3="3" weight1="0.33333333" weight2="0.33333333" weight3="0.33333333"/>
-  <Bond from="O1" to="O2"/>
-  <Bond from="O1" to="O3"/>
-  <Bond from="O2" to="O3"/>
-  <Bond from="M" to="O1"/>
-  <Bond from="M" to="O2"/>
-  <Bond from="M" to="O3"/>
+  <Bond from="N" to="O1"/>
+  <Bond from="N" to="O2"/>
+  <Bond from="N" to="O3"/>
  </Residue>
  <Residue name="BF4">
   <Atom name="B" type="BF4-B"/>
